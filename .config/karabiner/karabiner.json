@@ -1,0 +1,155 @@
+{
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Right CMD -> ru",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "right_command" },
+                                "to": [{ "key_code": "right_command" }],
+                                "to_if_alone": [{ "select_input_source": { "language": "ru" } }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Left CMD -> en",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "left_command" },
+                                "to": [{ "key_code": "left_command" }],
+                                "to_if_alone": [{ "select_input_source": { "language": "en" } }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change caps_lock to control if pressed with other keys, to escape if pressed alone.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "left_control" }],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "available_since": "12.3.0",
+                        "description": "Change button4 + mouse motion to scroll wheel (rev 1)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "modifiers": { "optional": ["any"] },
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "enable_mouse_motion_to_scroll",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "enable_mouse_motion_to_scroll",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "enable_mouse_motion_to_scroll",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "modifiers": { "optional": ["any"] } },
+                                "type": "mouse_motion_to_scroll"
+                            }
+                        ]
+                    },
+                    {
+                        "available_since": "12.3.0",
+                        "description": "Change button3 + mouse motion to scroll wheel (rev 1)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "modifiers": { "optional": ["any"] },
+                                    "pointing_button": "button3"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "enable_mouse_motion_to_scroll",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "enable_mouse_motion_to_scroll",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "enable_mouse_motion_to_scroll",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "modifiers": { "optional": ["any"] } },
+                                "type": "mouse_motion_to_scroll"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 50184,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": true,
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 34304,
+                        "vendor_id": 1452
+                    }
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 258,
+                        "vendor_id": 10730
+                    },
+                    "treat_as_built_in_keyboard": true
+                }
+            ],
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
+}
