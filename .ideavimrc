@@ -1,0 +1,122 @@
+source ~/.vimrc
+let mapleader=' '
+
+""""----------Plugins------
+Plug 'machakann/vim-highlightedyank'
+set surround
+set multiple-cursors
+"set clipboard+=ideaput
+set ideajoin
+set vim-paragraph-motion
+set textobj-indent
+set NERDTree
+set easymotion
+set notimeout
+set which-key
+" increase the timeoutlen (default: 1000), don't add space around the equal sign
+" set timeoutlen=5000
+set ignorecase
+set smartcase
+
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+let g:WhichKey_ShowVimActions = "true"
+" let g:WhichKey_KeyColor = "blue"
+let g:WhichKey_PrefixStyle = "bold"
+
+""" Plugin easymotion settings ---------
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
+" JK motions: Line motions
+
+""" Common settings -------------------------
+"'' set showmode
+set incsearch
+set nu
+
+""" which-key configurations
+
+nmap <leader>z <Action>(ToggleDistractionFreeMode)
+nmap <leader>t <Action>(ActivateTerminalToolWindow)
+nmap <leader><leader>t <Action>(HideActiveWindow)
+
+""""""""""""""""""""""""""""""""""""""popup""""""""""""""""""""""""""""""""
+nnoremap <Leader>ps :action FileStructurePopup<CR>
+nnoremap <leader>pg :action Generate<CR>
+nnoremap <Leader>pm :action ShowPopupMenu<CR>
+""""""""""""""""""""""""""""""""""""""Search""""""""""""""""""""""""""""""""
+nnoremap <Leader>ga :action GotoAction<CR>
+nnoremap <Leader>gc :action GotoClass<CR>
+nnoremap <Leader>gf :action GotoFile<CR>
+nnoremap <Leader>gs :action GotoSymbol<CR>
+""""""""""""""""""""""""""""""""""""""Jump""""""""""""""""""""""""""""""""
+nnoremap ge :action GotoNextError<CR>
+nmap <Leader>w :action ShowErrorDescription<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap ]] :action MethodDown<CR>
+nnoremap [[ :action MethodUp<CR>
+nnoremap gf :NERDTree <CR>
+map <leader>q :NERDTreeFind<CR>
+
+
+" easy motion mappings
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>f <Plug>(easymotion-bd-f)
+" nmap <leader>w <Plug>(easymotion-overwin-w)
+" nmap <leader>s <Plug>(easymotion-overwin-f2)
+" nmap <leader>f <Plug>(easymotion-f)
+" nmap <leader>F  <Plug>(easymotion-F)
+" map <leader>j <Plug>(easymotion-s)
+
+
+
+" <C-n> seems to me as a better solution than <M-n>,
+" but we should finally support vim-visual-multi because vim-multiple-cursors is deprecated now
+map <C-n> <Plug>NextWholeOccurrence
+
+
+" Reformat the current line only
+map <leader>o <Action>(FileStructurePopup)
+" These create newlines like o and O but stay in normal mode
+nmap zj o<Esc>k
+nmap zk O<Esc>j
+
+
+"nmap <leader>q :action SelectInProjectView<cr>
+map <leader>s <Action>(SelectInProjectView)
+nmap <leader>b :action Back<cr>
+nmap <leader>g :action GotoDeclaration<cr>
+"nmap <leader>f :action Forward<cr>
+nmap <leader>pu :action Vcs.Push<cr>
+nmap <leader>p :action GotoFile<cr>
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+" Map <leader>d to start debug
+map <leader>d <Action>(Debug)
+
+"  "" Map \b to toggle the breakpoint on the current line
+"  "map \b <Action>(ToggleLineBreakpoint)
+
+
+
+
+
+set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',ё\\,яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,Ё/|
+
+imap <C-ц> <C-w>
+imap <C-х> <C-[>
+imap <C-щ> <C-o>
