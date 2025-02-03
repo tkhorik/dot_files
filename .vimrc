@@ -1,6 +1,4 @@
-" A .vimrc that works both with Vim and IntelliJ IDEA
-
-" ----- Global -----
+" ----- Global Settings -----
 set ignorecase
 set incsearch
 set nohlsearch
@@ -8,7 +6,13 @@ set noshowcmd
 set number
 set smartcase
 let mapleader=" "
-" In insert or command mode, move by using Ctrl
+set undodir=~/.vim/undodir
+set undofile
+set scrolloff=8
+set history=300
+
+" ----- Key Mappings -----
+" Navigation in insert/command mode
 cnoremap <C-h> <Left>
 cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
@@ -18,36 +22,18 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
-" Remap search to Space
+" Search remapping
 nnoremap <Space> /
 nnoremap <S-Space> ?
 
-" Undo files 
-set undodir=~/.vim/undodir
-set undofile
-
-" Number of lines to keep above/below the cursor 
-set scrolloff=8
-
-" Remap motions
-nnoremap `] `>
-nnoremap `[ `<
-
-" Put d into the black hole register
+" Editing improvements
 nnoremap d "_d
 xnoremap d "_d
-
-" Put r into the black hole register
 nnoremap r "_r
 xnoremap r "_r
-
-" increase history size 
-set history=300
-
-" Paste without yanking the deleted text
 xnoremap p P
 
-" ----- Vim -----
+" ----- Vim-Specific Config -----
 if !has('ide')
     colorscheme desert
     filetype plugin indent on
@@ -65,54 +51,7 @@ if !has('ide')
     syntax on
 endif
 
-" ----- IDEAvim -----
-if has('ide')
-    " Settings
-    set idearefactormode=keep
-
-    " Goto
-    map gd <Action>(GotoDeclaration)
-    map ge <Action>(GotoNextError)
-    map gi <Action>(GotoImplementation)
-    map gt <Action>(GotoTypeDeclaration)
-    map gu <Action>(GotoDeclaration)
-    map gz <Action>(GotoTest)
-
-    " Tool Windows
-    map <leader>1 <Action>(ActivateProjectToolWindow)
-    map <leader>2 <Action>(ActivateAIAssistantToolWindow)
-    map <leader>3 <Action>(ActivateDebugToolWindow)
-    map <leader>4 <Action>(ActivateProblemsViewToolWindow)
-    map <leader>5 <Action>(ActivateTerminalToolWindow)
-
-    " VCS
-    map <leader>C <Action>(CheckinProject)
-    map <leader>B <Action>(Git.Branches)
-    map <leader>M <Action>(Annotate)
-    map <leader>L <Action>(Vcs.UpdateProject)
-
-    " General IDE Actions
-    map <leader>d <Action>(Debug)
-    map <leader>e <Action>(ShowErrorDescription)
-    map <leader>c <Action>(CommentByLineComment)
-    map <leader>f <Action>(ReformatCode)
-    map <leader>j <Action>(QuickJavaDoc)
-    map <leader>k <Action>(Stop)
-    map <leader>l <Action>(ToggleLineBreakpoint)
-    map <leader>n <Action>(Resume)
-    map <leader>r <Action>(RenameElement)
-    map <leader>s <Action>(Run)
-    map <leader>v <Action>(IntroduceVariable)
-    map <leader>x <Action>(EvaluateExpression)
-    map <leader><CR> <Action>(ShowIntentionActions)
-
-endif
-
-" :h matchit  
-" Helps you to match syntax constuctions in Vim
+" ----- Plugin Management -----
 runtime macros/matchit.vimrc
 set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',ё\\,яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,Ё/|
 
-imap <C-ц> <C-w>
-imap <C-х> <C-[>
-imap <C-щ> <C-o>
