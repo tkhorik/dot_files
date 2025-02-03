@@ -5,7 +5,7 @@ let mapleader=' '
 Plug 'machakann/vim-highlightedyank'
 set surround
 set multiple-cursors
-"set clipboard+=ideaput
+" set clipboard+=ideaput
 set ideajoin
 set vim-paragraph-motion
 set textobj-indent

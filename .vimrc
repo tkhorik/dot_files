@@ -22,6 +22,13 @@ inoremap <C-l> <Right>
 nnoremap <Space> /
 nnoremap <S-Space> ?
 
+" Undo files 
+set undodir=~/.vim/undodir
+set undofile
+
+" Number of lines to keep above/below the cursor 
+set scrolloff=8
+
 " Remap motions
 nnoremap `] `>
 nnoremap `[ `<
@@ -33,6 +40,9 @@ xnoremap d "_d
 " Put r into the black hole register
 nnoremap r "_r
 xnoremap r "_r
+
+" increase history size 
+set history=300
 
 " Paste without yanking the deleted text
 xnoremap p P
@@ -97,3 +107,12 @@ if has('ide')
     map <leader><CR> <Action>(ShowIntentionActions)
 
 endif
+
+" :h matchit  
+" Helps you to match syntax constuctions in Vim
+runtime macros/matchit.vimrc
+set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',ё\\,яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,Ё/|
+
+imap <C-ц> <C-w>
+imap <C-х> <C-[>
+imap <C-щ> <C-o>
