@@ -7,7 +7,6 @@ Plug 'machakann/vim-highlightedyank'
 set multiple-cursors
 set surround
 set commentary
-" set clipboard+=ideaput
 set ideajoin
 set vim-paragraph-motion
 set textobj-indent
@@ -43,7 +42,6 @@ set nu
 nmap <leader>z <Action>(ToggleDistractionFreeMode)
 nmap <leader>t <Action>(ActivateTerminalToolWindow)
 nmap <leader><leader>t <Action>(HideActiveWindow)
-
 """"""""""""""""""""""""""""""""""""""popup""""""""""""""""""""""""""""""""
 nnoremap <Leader>ps :action FileStructurePopup<CR>
 nnoremap <leader>pg :action Generate<CR>
