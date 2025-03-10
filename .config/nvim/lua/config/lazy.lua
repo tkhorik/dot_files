@@ -14,6 +14,17 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Enable spell check for English and Russian
+vim.o.spell = true -- Enable spell checking
+vim.o.spelllang = "en_us,ru" -- Set English and Russian as the spell-checking languages
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*.md",
+  callback = function()
+    vim.bo.modifiable = true
+    vim.bo.readonly = false
+  end,
+})
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
