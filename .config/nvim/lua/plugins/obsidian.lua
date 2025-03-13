@@ -32,6 +32,15 @@ return {
       },
     },
 
+    -- Optional, for templates (see below).
+    templates = {
+      folder = "Templates",
+      date_format = "%Y-%m-%d",
+      time_format = "%H:%M",
+      -- A map for custom variables, the key should be the variable and the value a function
+      substitutions = {},
+    },
+
     log_level = vim.log.levels.INFO,
 
     daily_notes = {
@@ -39,7 +48,7 @@ return {
       date_format = "%Y-%m-%d",
       alias_format = "%B %-d, %Y",
       default_tags = { "daily-notes" },
-      template = nil,
+      template = "daily.md",
     },
 
     mappings = {
@@ -61,16 +70,20 @@ return {
         end,
         opts = { buffer = true, expr = true },
       },
+      ["<leader>ot"] = { action = ":ObsidianTemplate<CR>", opts = { noremap = true, silent = true, buffer = true } }, -- Added for templates
     },
 
     new_notes_location = "notes_subdir",
 
     note_id_func = function(title)
-      if title then
-        return title:gsub("[^%w%-_ ]", ""):gsub("%s+", "-"):lower()
-      end
-      return tostring(os.time())
+      return title and title:lower():gsub("%s+", "-") or tostring(os.time())
     end,
+    -- note_id_func = function(title)
+    --   if title then
+    --     return title:gsub("[^%w%-_ ]", ""):gsub("%s+", "-"):lower()
+    --   end
+    --   return tostring(os.time())
+    -- end,
 
     note_path_func = function(spec)
       local path = spec.dir / tostring(spec.id)
@@ -101,13 +114,6 @@ return {
       end
       return out
     end,
-
-    templates = {
-      folder = "templates",
-      date_format = "%Y-%m-%d",
-      time_format = "%H:%M",
-      substitutions = {},
-    },
 
     follow_url_func = function(url)
       vim.fn.jobstart({ "open", url })

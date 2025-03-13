@@ -111,3 +111,24 @@ map <leader>d <Action>(Debug)
 "  "" Map \b to toggle the breakpoint on the current line
 "  "map \b <Action>(ToggleLineBreakpoint)
 
+"" Refactorings
+" Rename with leader key + r
+map <Leader>r :action RenameElement<CR>
+
+" Extract Variable
+map <Leader>ev :action ExtractVariable<CR>
+
+" Extract Method
+map <Leader>em :action ExtractMethod<CR>
+
+" Extract Field
+map <Leader>ef :action ExtractField<CR>
+
+" Extract Parameter
+map <Leader>ep :action ExtractParameter<CR>
+
+" Optimize Imports
+map <Leader>oi :action OptimizeImports<CR>
+
+" Reformat Code
+map <Leader>rf :action ReformatCode<CR>
