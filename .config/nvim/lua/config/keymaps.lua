@@ -11,6 +11,7 @@ vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<cr>")
 
 -- tree
 vim.keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<cr>")
+-- vim.keymap.set("n", "<leader>t", vim.cmd.NERDTreeToggle)
 
 -- icon picker
 vim.keymap.set("n", "<leader>ic", ":IconPickerNormal<cr>", { noremap = true, silent = true })

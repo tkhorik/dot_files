@@ -131,4 +131,4 @@ map <Leader>ep :action ExtractParameter<CR>
 map <Leader>oi :action OptimizeImports<CR>
 
 " Reformat Code
-map <Leader>rf :action ReformatCode<CR>
+" map <Leader>rf :action ReformatCode<CR>
