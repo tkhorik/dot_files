@@ -49,9 +49,10 @@ vim.keymap.set("n", "<leader>gp", ":lua require('goto-preview').close_all_win()<
 -- some keys for tabs switch
 -- nnoremap gT :bp<CR>
 
-vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<CR>", { desc = "New Obsidian Note" })
 -- vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianToday<CR>", { desc = "Open Today’s Note" })
 -- vim.keymap.set("n", "<leader>on", "<cmd>ObsidianTemplate<CR>", { desc = "New Obsidian Note from Template" })
+
+vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<CR>", { desc = "New Obsidian Note" })
 vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianOpen<CR>", { desc = "Open Obsidian App" })
 vim.keymap.set("n", "<leader>ot", function()
   local templates = { "daily.md", "meeting.md", "journal.md" } -- Add your templates here
@@ -62,3 +63,4 @@ vim.keymap.set("n", "<leader>ot", function()
     end
   end)
 end, { desc = "Insert Template into Obsidian Note" })
+vim.keymap.set("i", "<CR>", "<CR>")

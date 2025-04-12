@@ -21,20 +21,20 @@ return {
       {
         name = "primary_vault",
         path = vim.fn.expand("~/Documents/ObsidianVault"),
-        -- overrides = {
-        --   notes_subdir = "inbox",
-        --   -- new_notes_location = "notes_subdir",
-        --   daily_notes = {
-        --     folder = "dailies", -- Relative to vault root
-        --     date_format = "%Y-%m-%d",
-        --     template = "daily.md", -- REQUIRED field [4][6]
-        --   },
-        --   templates = {
-        --     folder = "templates", -- Relative to vault root
-        --     date_format = "%Y-%m-%d",
-        --     time_format = "%H:%M",
-        --   },
-        -- },
+        overrides = {
+          notes_subdir = "inbox",
+          new_notes_location = "notes_subdir", ---here was changed you can return it back tomorrow
+          daily_notes = {
+            folder = "dailies", -- Relative to vault root
+            date_format = "%Y-%m-%d",
+            template = "daily.md", -- REQUIRED field [4][6]
+          },
+          templates = {
+            folder = "templates", -- Relative to vault root
+            date_format = "%Y-%m-%d",
+            time_format = "%H:%M",
+          },
+        },
       },
     },
     -- Optional, for templates (see below).
@@ -53,8 +53,8 @@ return {
       date_format = "%Y-%m-%d",
       alias_format = "%B %-d, %Y",
       default_tags = { "daily-notes" },
-      -- template = "daily.md",
-      template = nil,
+      template = "daily.md",
+      -- template = nil,
     },
 
     mappings = {
@@ -105,8 +105,6 @@ return {
     end,
 
     -- preferred_link_style = "wiki",
-
-    disable_frontmatter = false,
 
     note_frontmatter_func = function(note)
       if note.title then
