@@ -15,6 +15,10 @@ return {
       dir = "~/Documents/ObsidianVault",
       nvim_cmp = true,
       min_chars = 2,
+      -- Add these to improve tag completion
+      new_notes = true, -- Trigger completion in new notes
+      prepend_note_id = true,
+      use_path_only = false,
     },
 
     workspaces = {
@@ -106,11 +110,28 @@ return {
 
     -- preferred_link_style = "wiki",
 
+    -- note_frontmatter_func = function(note)
+    --   if note.title then
+    --     note:add_alias(note.title)
+    --   end
+    --   local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+    --   if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+    --     for k, v in pairs(note.metadata) do
+    --       out[k] = v
+    --     end
+    --   end
+    --   return out
+    -- end,
+
     note_frontmatter_func = function(note)
       if note.title then
         note:add_alias(note.title)
       end
-      local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+      local out = {
+        id = note.id,
+        aliases = note.aliases,
+        tags = note.tags or { "default-tag" }, -- Add a default tag
+      }
       if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
         for k, v in pairs(note.metadata) do
           out[k] = v
@@ -118,7 +139,6 @@ return {
       end
       return out
     end,
-
     follow_url_func = function(url)
       vim.fn.jobstart({ "open", url })
     end,

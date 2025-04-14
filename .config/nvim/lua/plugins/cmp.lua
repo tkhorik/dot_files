@@ -49,11 +49,21 @@ return {
           ["<C-e>"] = cmp.mapping.abort(), -- Close completion menu
           ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Confirm selection
         }),
+        -- mapping = cmp.mapping.preset.insert({
+        --   ["<C-k>"] = cmp.mapping.select_prev_item(), -- Navigate up
+        --   ["<C-j>"] = cmp.mapping.select_next_item(), -- Navigate down
+        --   ["<C-b>"] = cmp.mapping.scroll_docs(-4), -- Scroll docs up
+        --   ["<C-f>"] = cmp.mapping.scroll_docs(4), -- Scroll docs down
+        --   ["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion menu
+        --   ["<C-e>"] = cmp.mapping.abort(), -- Close completion menu
+        --   ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Confirm selection
+        -- }),
         sources = cmp.config.sources({
-          { name = "nvim_lsp" }, -- LSP source
-          { name = "luasnip" }, -- Snippet source
-          { name = "buffer" }, -- Buffer source
-          { name = "path" }, -- Path source
+          { name = "nvim_lsp" },
+          { name = "luasnip" },
+          { name = "buffer" },
+          { name = "path" },
+          { name = "obsidian" }, -- Add this for Obsidian.nvim completions
         }),
         formatting = {
           format = lspkind.cmp_format({

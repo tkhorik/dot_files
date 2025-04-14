@@ -64,3 +64,35 @@ vim.keymap.set("n", "<leader>ot", function()
   end)
 end, { desc = "Insert Template into Obsidian Note" })
 vim.keymap.set("i", "<CR>", "<CR>")
+
+-- Key mappings
+vim.keymap.set("n", "<leader>ok", function()
+  local filepath = vim.fn.expand("%:p") -- Get full path of current buffer
+  local dest_dir = "/Users/marv/Documents/ObsidianVault/zettelkasten"
+  local dest_path = dest_dir .. "/" .. vim.fn.expand("%:t") -- Append filename to destination directory
+
+  -- Check if file exists
+  if vim.fn.filereadable(filepath) == 0 then
+    print("Error: File does not exist!")
+    return
+  end
+
+  -- Check if destination directory exists
+  if vim.fn.isdirectory(dest_dir) == 0 then
+    print("Error: Destination directory does not exist!")
+    return
+  end
+
+  -- Move file and handle errors
+  local result = os.execute("mv " .. vim.fn.shellescape(filepath) .. " " .. vim.fn.shellescape(dest_dir))
+  if result ~= 0 then
+    print("Error: Failed to move file!")
+    return
+  end
+
+  -- Close buffer after successful move
+  vim.cmd("bd")
+  print("File moved successfully to " .. dest_dir)
+end)
+
+vim.keymap.set("n", "<leader>odd", ":!rm '%:p'<cr>:bd<cr>")
