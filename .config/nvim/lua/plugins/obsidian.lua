@@ -28,11 +28,11 @@ return {
         overrides = {
           notes_subdir = "inbox",
           new_notes_location = "notes_subdir", ---here was changed you can return it back tomorrow
-          daily_notes = {
-            folder = "dailies", -- Relative to vault root
-            date_format = "%Y-%m-%d",
-            template = "daily.md", -- REQUIRED field [4][6]
-          },
+          -- daily_notes = {
+          --   folder = "dailies", -- Relative to vault root
+          --   date_format = "%Y-%m-%d",
+          --   template = "daily.md", -- REQUIRED field [4][6]
+          -- },
           templates = {
             folder = "templates", -- Relative to vault root
             date_format = "%Y-%m-%d",
