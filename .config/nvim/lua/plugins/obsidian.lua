@@ -57,7 +57,7 @@ return {
       date_format = "%Y-%m-%d",
       alias_format = "%B %-d, %Y",
       default_tags = { "daily-notes" },
-      template = "daily.md",
+      template = "DaylyNote.md",
       -- template = nil,
     },
 
