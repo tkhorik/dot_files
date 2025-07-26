@@ -52,20 +52,52 @@ nnoremap <Leader>gc :action GotoClass<CR>
 nnoremap <Leader>gf :action GotoFile<CR>
 nnoremap <Leader>gs :action GotoSymbol<CR>
 """"""""""""""""""""""""""""""""""""""Jump""""""""""""""""""""""""""""""""
-nnoremap ge :action GotoNextError<CR>
+" nnoremap ge :action GotoNextError<CR>
+nmap ]e <Action>(GotoNextError)
+nmap [e <Action>(GotoPreviousError)
+
 nmap <Leader>w :action ShowErrorDescription<CR>
+"nmap <leader>q :action SelectInProjectView<cr>
+map <leader>s <Action>(SelectInProjectView)
+nmap <leader>b :action Back<cr>
+nmap <leader>gD :action GotoDeclaration<cr>
+nmap <leader>p :action GotoFile<cr>
+nmap <leader>f :action Forward<cr>
+
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gs :action GotoSuperMethod<CR>
 nnoremap ]] :action MethodDown<CR>
 nnoremap [[ :action MethodUp<CR>
-nnoremap gf :NERDTree <CR>
 map <leader>q :NERDTreeFind<CR>
+""""""""""""""""""""""""""""""""""""" Refactorings """"""""""""""""""""""""""""""""""""
+" Rename with leader key + r
+nmap <leader>. <Action>(ShowIntentionActions)
+nmap <leader>r <Action>(ReformatCode)
+" map <Leader>r :action RenameElement<CR>
 
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>cs <Action>(ChangeSignature)
+" Extract Variable
+map <Leader>ev :action ExtractVariable<CR>
+" Extract Method
+map <Leader>em :action ExtractMethod<CR>
+" Extract Field
+map <Leader>ef :action ExtractField<CR>
+" Extract Parameter
+map <Leader>ep :action ExtractParameter<CR>
+" Optimize Imports
+map <Leader>oi :action OptimizeImports<CR>
+" Reformat Code
+" map <Leader>rf :action ReformatCode<CR>
+
+" Quick docs/implementations (handy when navigating)
+nmap K  <Action>(QuickJavaDoc)
+" nmap gi <Action>(QuickImplementations)
 
 " easy motion mappings
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
-map <Leader>f <Plug>(easymotion-bd-f)
+map <Leader>F <Plug>(easymotion-bd-f)
 " nmap <leader>w <Plug>(easymotion-overwin-w)
 " nmap <leader>s <Plug>(easymotion-overwin-f2)
 " nmap <leader>f <Plug>(easymotion-f)
@@ -80,19 +112,14 @@ map <C-n> <Plug>NextWholeOccurrence
 
 
 " Reformat the current line only
+" Convenience
 map <leader>o <Action>(FileStructurePopup)
 " These create newlines like o and O but stay in normal mode
 nmap zj o<Esc>k
 nmap zk O<Esc>j
 
 
-"nmap <leader>q :action SelectInProjectView<cr>
-map <leader>s <Action>(SelectInProjectView)
-nmap <leader>b :action Back<cr>
-nmap <leader>g :action GotoDeclaration<cr>
-"nmap <leader>f :action Forward<cr>
 nmap <leader>pu :action Vcs.Push<cr>
-nmap <leader>p :action GotoFile<cr>
 " .ideavimrc is a configuration file for IdeaVim plugin. It uses
 "   the same commands as the original .vimrc configuration.
 " You can find a list of commands here: https://jb.gg/h38q75
@@ -110,25 +137,3 @@ map <leader>d <Action>(Debug)
 
 "  "" Map \b to toggle the breakpoint on the current line
 "  "map \b <Action>(ToggleLineBreakpoint)
-
-"" Refactorings
-" Rename with leader key + r
-map <Leader>r :action RenameElement<CR>
-
-" Extract Variable
-map <Leader>ev :action ExtractVariable<CR>
-
-" Extract Method
-map <Leader>em :action ExtractMethod<CR>
-
-" Extract Field
-map <Leader>ef :action ExtractField<CR>
-
-" Extract Parameter
-map <Leader>ep :action ExtractParameter<CR>
-
-" Optimize Imports
-map <Leader>oi :action OptimizeImports<CR>
-
-" Reformat Code
-" map <Leader>rf :action ReformatCode<CR>
