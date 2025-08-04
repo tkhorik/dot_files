@@ -123,3 +123,6 @@ nnoremap <leader>d  :action Debug<CR>
 "   Docs: https://jb.gg/h38q75
 "   Map IDE actions: https://jb.gg/abva4t
 "   Examples: https://jb.gg/share-ideavimrc
+
+"   map <leader>m :action ToggleMaximizeEditorWindow<CR>
+   map <leader>9 <Action>(com.testoutputselector.FocusTestRunnerAction)
