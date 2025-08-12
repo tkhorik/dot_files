@@ -196,7 +196,7 @@ if.app-id = 'org.mozilla.firefox'
 run = "move-node-to-workspace B"
 
 [[on-window-detected]]
-if.app-id = 'com.google.Chrome.beta'
+if.app-id = 'com.google.Chrome'
 run = "move-node-to-workspace B"
 
 [[on-window-detected]]
@@ -247,3 +247,10 @@ run = "move-node-to-workspace D"
 if.app-id = 'com.apple.finder'
 run = "move-node-to-workspace 5"
 
+[[on-window-detected]]
+if.app-id = 'com.obsproject.obs-studio'
+run = "move-node-to-workspace 10"
+
+[[on-window-detected]]
+if.app-id = 'com.rogueamoeba.Loopback'
+run = "move-node-to-workspace 9"

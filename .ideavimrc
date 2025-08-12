@@ -45,6 +45,7 @@ let g:EasyMotion_smartcase  = 1          " Case-aware jumps
 
 " ─────────────────────────── Window / Tools ────────────────────────────────
 nnoremap <leader>z :action ToggleDistractionFreeMode<CR>
+nnoremap <leader>x :action ToggleZenMode<CR>
 nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
 nnoremap <leader><leader>t :action HideActiveWindow<CR>
 
@@ -126,3 +127,4 @@ nnoremap <leader>d  :action Debug<CR>
 
 "   map <leader>m :action ToggleMaximizeEditorWindow<CR>
    map <leader>9 <Action>(com.testoutputselector.FocusTestRunnerAction)
+   nnoremap <leader>; A;<Esc>
