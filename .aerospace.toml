@@ -42,8 +42,9 @@ key-mapping.preset = 'qwerty'
 # Drop it from your config, if you don't like this behavior
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
-on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-on-focus-changed = "move-mouse window-lazy-center"
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center'] # Mouse lazily follows focused monitor (default in i3)
+# or
+# on-focus-changed = ['move-mouse window-lazy-center'] # Mouse lazily follows any focus (window or workspace)
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -64,7 +65,8 @@ outer.right =      5
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 [mode.main.binding]
-
+    cmd-h = [] # Disable "hide application"
+    cmd-alt-h = [] # Disable "hide others"
 # All possible keys:
 # - Letters.        a, b, c, ..., z
 # - Numbers.        0, 1, 2, ..., 9
@@ -243,9 +245,9 @@ run = "move-node-to-workspace D"
 if.app-id = 'com.1password.1password'
 run = "move-node-to-workspace D"
 
-[[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = "move-node-to-workspace 5"
+# [[on-window-detected]]
+# if.app-id = 'com.apple.finder'
+# run = "move-node-to-workspace 5"
 
 [[on-window-detected]]
 if.app-id = 'com.obsproject.obs-studio'
@@ -254,3 +256,8 @@ run = "move-node-to-workspace 10"
 [[on-window-detected]]
 if.app-id = 'com.rogueamoeba.Loopback'
 run = "move-node-to-workspace 9"
+
+[[on-window-detected]]
+if.app-id = "com.apple.finder"
+run = "layout floating"
+

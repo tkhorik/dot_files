@@ -22,6 +22,11 @@ set which-key
 " Which‑Key responsiveness
 set notimeout
 
+""" Common settings -------------------------
+set showmode
+set so=5
+set nu
+
 " Search
 set ignorecase
 set smartcase
@@ -30,7 +35,17 @@ set incsearch
 " UI
 set nu
 " set showmode
+set clipboard+=unname
+""" Idea specific settings ------------------
+set ideastatusicon=gray
 
+" Free gC from commentary
+silent! unmap gC
+silent! vunmap gC
+
+" Use gC for IntelliJ block comments
+nnoremap gC :action CommentByBlockComment<CR>
+vnoremap gC :action CommentByBlockComment<CR>
 " ─────────────────────────── Plugin settings ───────────────────────────────
 let g:argtextobj_pairs = "[:],(:),<:>"
 
@@ -81,6 +96,9 @@ nnoremap <leader>q :NERDTreeFind<CR>
 " ───────────────────────────── Refactorings ────────────────────────────────
 nnoremap <leader>.  :action ShowIntentionActions<CR>
 nnoremap <leader>r  :action ReformatCode<CR>
+" Reformat the current line only
+map <leader>l V<Action>(ReformatCode)
+
 nnoremap <leader>rn :action RenameElement<CR>
 nnoremap <leader>cs :action ChangeSignature<CR>
 
@@ -117,6 +135,26 @@ nnoremap Q  gq
 " ─────────────────────────────── VCS / Debug ───────────────────────────────
 nnoremap <leader>pu :action Vcs.Push<CR>
 nnoremap <leader>d  :action Debug<CR>
+
+" Move focus between editor splits (panes) using Vim-like keys
+nmap <C-h> :action PrevSplitter<CR>
+nmap <C-l> :action NextSplitter<CR>
+nmap <C-j> :action SplitterDown<CR>
+nmap <C-k> :action SplitterUp<CR>
+
+" ===== IntelliJ Split Management (Vim-style) =====
+" Close current split (always works)
+" nunmap <C-w>c
+" nnoremap <C-w>c :action ActivateEditorComponent<CR>:action Unsplit<CR>
+" nnoremap <C-w>o :action ActivateEditorComponent<CR>:action UnsplitAll<CR>
+
+nunmap <C-w>c
+nnoremap <C-w>c :action Unsplit<CR>
+
+" Maybe it is notneeded. Yanked area are higlighting anyway
+Plug 'machakann/vim-highlightedyank'
+
+nnoremap <leader>cs :action FileStructurePopup<CR>
 " nnoremap <leader>b :action ToggleLineBreakpoint<CR>
 
 " ──────────────────────────────── Help refs ────────────────────────────────
