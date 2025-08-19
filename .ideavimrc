@@ -107,7 +107,6 @@ nnoremap <leader>em :action ExtractMethod<CR>
 nnoremap <leader>ef :action ExtractField<CR>
 nnoremap <leader>ep :action ExtractParameter<CR>
 nnoremap <leader>oi :action OptimizeImports<CR>
-" nnoremap <leader>rf :action ReformatCode<CR>
 
 " Docs / info
 nnoremap K :action QuickJavaDoc<CR>
