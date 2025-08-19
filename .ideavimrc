@@ -95,18 +95,38 @@ nnoremap <leader>q :NERDTreeFind<CR>
 
 " ───────────────────────────── Refactorings ────────────────────────────────
 nnoremap <leader>.  :action ShowIntentionActions<CR>
-nnoremap <leader>r  :action ReformatCode<CR>
+" nnoremap <leader>r  :action ReformatCode<CR>
+" Format file
+nnoremap <leader>ff :action ReformatCode<CR>
+
 " Reformat the current line only
 map <leader>l V<Action>(ReformatCode)
-
-nnoremap <leader>rn :action RenameElement<CR>
-nnoremap <leader>cs :action ChangeSignature<CR>
-
-nnoremap <leader>ev :action ExtractVariable<CR>
-nnoremap <leader>em :action ExtractMethod<CR>
-nnoremap <leader>ef :action ExtractField<CR>
-nnoremap <leader>ep :action ExtractParameter<CR>
-nnoremap <leader>oi :action OptimizeImports<CR>
+"=======old section
+" nnoremap <leader>rn :action RenameElement<CR>
+" nnoremap <leader>cs :action ChangeSignature<CR>
+"
+" nnoremap <leader>ev :action ExtractVariable<CR>
+" nnoremap <leader>em :action ExtractMethod<CR>
+" nnoremap <leader>ef :action ExtractField<CR>
+" nnoremap <leader>ep :action ExtractParameter<CR>
+" nnoremap <leader>oi :action OptimizeImports<CR>
+" 
+" Close active tab
+map <leader>q <action>(CloseContent)
+" Refactoring
+map <leader>rn <Action>(RenameElement)
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rv <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+" Go to code
+nmap <leader>gd <Action>(GotoDeclaration)
+nmap <leader>gy <Action>(GotoTypeDeclaration)
+nmap <leader>gi <Action>(GotoImplementation)
+nmap <leader>gu <Action>(ShowUsages)
+nmap <leader>gt <Action>(GotoTest)
+" ====================
 
 " Docs / info
 nnoremap K :action QuickJavaDoc<CR>
@@ -147,9 +167,7 @@ nmap <C-k> :action SplitterUp<CR>
 " nnoremap <C-w>c :action ActivateEditorComponent<CR>:action Unsplit<CR>
 " nnoremap <C-w>o :action ActivateEditorComponent<CR>:action UnsplitAll<CR>
 
-nunmap <C-w>c
-nnoremap <C-w>c :action Unsplit<CR>
-
+map <leader>wu <Action>(Unsplit)
 " Maybe it is notneeded. Yanked area are higlighting anyway
 Plug 'machakann/vim-highlightedyank'
 
