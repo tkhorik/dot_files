@@ -72,7 +72,7 @@ nnoremap <leader>pm :action ShowPopupMenu<CR>
 " ───────────────────────────── Search / Goto ───────────────────────────────
 nnoremap <leader>ga :action GotoAction<CR>
 nnoremap <leader>gc :action GotoClass<CR>
-nnoremap <leader>gf :action GotoFile<CR>
+" nnoremap <leader>gf :action GotoFile<CR>
 nnoremap <leader>gs :action GotoSymbol<CR>
 
 " ─────────────────────────────── Jump / Nav ────────────────────────────────
@@ -82,11 +82,9 @@ nnoremap <leader>w :action ShowErrorDescription<CR>
 
 nnoremap <leader>s :action SelectInProjectView<CR>
 nnoremap <leader>b :action Back<CR>
-nnoremap <leader>gD :action GotoDeclaration<CR>
-nnoremap <leader>p :action GotoFile<CR>
+" nnoremap <leader>gD :action GotoDeclaration<CR>
 nnoremap <leader>f :action Forward<CR>
 
-nnoremap gi :action GotoImplementation<CR>
 nnoremap gS :action GotoSuperMethod<CR>
 nnoremap ]] :action MethodDown<CR>
 nnoremap [[ :action MethodUp<CR>
@@ -110,7 +108,7 @@ map <leader>l V<Action>(ReformatCode)
 " nnoremap <leader>ef :action ExtractField<CR>
 " nnoremap <leader>ep :action ExtractParameter<CR>
 " nnoremap <leader>oi :action OptimizeImports<CR>
-" 
+" ========================================================================
 " Close active tab
 map <leader>q <action>(CloseContent)
 " Refactoring
@@ -126,6 +124,12 @@ nmap <leader>gy <Action>(GotoTypeDeclaration)
 nmap <leader>gi <Action>(GotoImplementation)
 nmap <leader>gu <Action>(ShowUsages)
 nmap <leader>gt <Action>(GotoTest)
+
+" File navigation
+map <leader>ff <action>(GotoFile)
+map <leader>fr <action>(RecentFiles)
+map <leader>fc <action>(FindInPath)
+map <leader>fl <action>(RecentLocations)
 " ====================
 
 " Docs / info
