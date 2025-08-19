@@ -46,17 +46,14 @@ vim.keymap.set("n", "<leader>gt", ":lua require('goto-preview').goto_preview_typ
 vim.keymap.set("n", "<leader>gi", ":lua require('goto-preview').goto_preview_implementation()<CR>")
 vim.keymap.set("n", "<leader>gp", ":lua require('goto-preview').close_all_win()<CR>")
 
--- some keys for tabs switch
--- nnoremap gT :bp<CR>
-
--- vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianToday<CR>", { desc = "Open Today’s Note" })
--- vim.keymap.set("n", "<leader>on", "<cmd>ObsidianTemplate<CR>", { desc = "New Obsidian Note from Template" })
-
+-- Obsidian.nvim keymaps
+vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianToday<CR>", { desc = "Open Today’s Note" })
 vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<CR>", { desc = "New Obsidian Note" })
 vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianOpen<CR>", { desc = "Open Obsidian App" })
-vim.keymap.set("n", "<leader>ot", function()
-  local templates = { "daily.md", "meeting.md", "journal.md" } -- Add your templates here
 
+-- Template picker (custom)
+vim.keymap.set("n", "<leader>otm", function()
+  local templates = { "daily.md", "meeting.md", "journal.md" }
   vim.ui.select(templates, { prompt = "Select a template:" }, function(choice)
     if choice then
       vim.cmd("ObsidianTemplate " .. choice)
