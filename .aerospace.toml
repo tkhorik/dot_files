@@ -233,17 +233,17 @@ run = "move-node-to-workspace 2"
 if.app-id = 'com.hnc.Discord'
 run = "move-node-to-workspace 1"
 
-[[on-window-detected]]
-if.app-id = 'com.cisco.secureclient.gui'
-run = "move-node-to-workspace 5"
+# [[on-window-detected]]
+# if.app-id = 'com.cisco.secureclient.gui'
+# run = "move-node-to-workspace 5"
 
 [[on-window-detected]]
 if.app-id = 'com.linguee.DeepLCopyTranslator'
 run = "move-node-to-workspace D"
 
-[[on-window-detected]]
-if.app-id = 'com.1password.1password'
-run = "move-node-to-workspace D"
+# [[on-window-detected]]
+# if.app-id = 'com.1password.1password'
+# run = "move-node-to-workspace D"
 
 # [[on-window-detected]]
 # if.app-id = 'com.apple.finder'
@@ -256,6 +256,14 @@ run = "move-node-to-workspace 10"
 [[on-window-detected]]
 if.app-id = 'com.rogueamoeba.Loopback'
 run = "move-node-to-workspace 9"
+
+[[on-window-detected]]
+if.app-id = "com.1password.1password"
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = "com.cisco.secureclient.gui"
+run = "layout floating"
 
 [[on-window-detected]]
 if.app-id = "com.apple.finder"

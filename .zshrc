@@ -21,7 +21,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Obsidian
 alias oo='cd $HOME/Documents/ObsidianVault/'
 # alias or='nvim $HOME/Documents/ObsidianVault/inbox/*.md'
-alias or='nvim $(find "$HOME/Documents/ObsidianVault" -maxdepth 1 -name "*.md" -o -path "$HOME/Documents/ObsidianVault/inbox/*.md")'
+# alias or='nvim $(find "$HOME/Documents/ObsidianVault" -maxdepth 1 -name "*.md" -o -path "$HOME/Documents/ObsidianVault/inbox/*.md")'
+# alias or='find "$HOME/Documents/ObsidianVault" -maxdepth 2 \( -name "*.md" -o -path "$HOME/Documents/ObsidianVault/inbox/*.md" \) -print0 | xargs -0 nvim'
+alias or='find "$HOME/Documents/ObsidianVault" "$HOME/Documents/ObsidianVault/inbox" -maxdepth 1 -name "*.md" -print0 | xargs -0 nvim'
 alias og="/Users/marv/bin/og"
 alias ou='cd $HOME/notion-obsidian-sync-zazencodes && node batchUpload.js --lastmod-days-window 5'
 
