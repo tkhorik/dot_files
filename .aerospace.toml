@@ -241,9 +241,9 @@ run = "move-node-to-workspace 1"
 if.app-id = 'com.linguee.DeepLCopyTranslator'
 run = "move-node-to-workspace D"
 
-# [[on-window-detected]]
-# if.app-id = 'com.1password.1password'
-# run = "move-node-to-workspace D"
+[[on-window-detected]]
+if.app-id = 'com.openai.chat'
+run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'

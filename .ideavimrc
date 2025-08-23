@@ -72,7 +72,7 @@ nnoremap <leader>pm :action ShowPopupMenu<CR>
 " ───────────────────────────── Search / Goto ───────────────────────────────
 nnoremap <leader>ga :action GotoAction<CR>
 nnoremap <leader>gc :action GotoClass<CR>
-" nnoremap <leader>gf :action GotoFile<CR>
+nnoremap <leader>gf :action GotoFile<CR>
 nnoremap <leader>gs :action GotoSymbol<CR>
 
 " ─────────────────────────────── Jump / Nav ────────────────────────────────
@@ -80,6 +80,7 @@ nnoremap ]e :action GotoNextError<CR>
 nnoremap [e :action GotoPreviousError<CR>
 nnoremap <leader>w :action ShowErrorDescription<CR>
 
+" SelectInProjectView seelct in file tree in nerdtree 
 nnoremap <leader>s :action SelectInProjectView<CR>
 nnoremap <leader>b :action Back<CR>
 " nnoremap <leader>gD :action GotoDeclaration<CR>
@@ -110,7 +111,7 @@ map <leader>l V<Action>(ReformatCode)
 " nnoremap <leader>oi :action OptimizeImports<CR>
 " ========================================================================
 " Close active tab
-map <leader>q <action>(CloseContent)
+" map <leader>q <action>(CloseContent)
 " Refactoring
 map <leader>rn <Action>(RenameElement)
 map <leader>rm <Action>(ExtractMethod)

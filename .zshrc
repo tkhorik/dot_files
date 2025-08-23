@@ -51,3 +51,5 @@ alias ......="cd ../../../../.."
 
 bindkey -v
 
+
+export PATH=$PATH:/Users/marv/.spicetify
