@@ -65,6 +65,7 @@ nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
 nnoremap <leader><leader>t :action HideActiveWindow<CR>
 
 " ───────────────────────────── Popups / Menus ──────────────────────────────
+nnoremap <leader>pv :action SelectInProjectView<CR>
 nnoremap <leader>ps :action FileStructurePopup<CR>
 nnoremap <leader>pg :action Generate<CR>
 nnoremap <leader>pm :action ShowPopupMenu<CR>
@@ -81,7 +82,6 @@ nnoremap [e :action GotoPreviousError<CR>
 nnoremap <leader>w :action ShowErrorDescription<CR>
 
 " SelectInProjectView seelct in file tree in nerdtree 
-nnoremap <leader>s :action SelectInProjectView<CR>
 nnoremap <leader>b :action Back<CR>
 " nnoremap <leader>gD :action GotoDeclaration<CR>
 nnoremap <leader>f :action Forward<CR>

@@ -53,3 +53,7 @@ bindkey -v
 
 
 export PATH=$PATH:/Users/marv/.spicetify
+
+export OPENAI_API_KEY="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"
+export OPENAI_BASE_URL="https://openrouter.ai/api/v1"
+export DEEPSEEK_MODEL="deepseek/deepseek-r1:free"
