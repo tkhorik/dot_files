@@ -10,7 +10,6 @@ let mapleader = ' '
 Plug 'machakann/vim-highlightedyank'
 
 set multiple-cursors
-set surround
 set commentary
 set ideajoin
 set vim-paragraph-motion
@@ -18,7 +17,7 @@ set textobj-indent
 set NERDTree
 set easymotion
 set which-key
-
+set clipboard=nnamedplus
 " Which‑Key responsiveness
 set notimeout
 
@@ -35,7 +34,6 @@ set incsearch
 " UI
 set nu
 " set showmode
-set clipboard+=unname
 """ Idea specific settings ------------------
 set ideastatusicon=gray
 
@@ -81,7 +79,7 @@ nnoremap ]e :action GotoNextError<CR>
 nnoremap [e :action GotoPreviousError<CR>
 nnoremap <leader>w :action ShowErrorDescription<CR>
 
-" SelectInProjectView seelct in file tree in nerdtree 
+" SelectInProjectView seelct in file tree in nerdtree
 nnoremap <leader>b :action Back<CR>
 " nnoremap <leader>gD :action GotoDeclaration<CR>
 nnoremap <leader>f :action Forward<CR>
