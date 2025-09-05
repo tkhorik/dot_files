@@ -41,6 +41,10 @@ alias pwdy="echo $(pwd) | pbcopy"
 alias cl="clear"
 alias z="cd"
 alias lr="ls -lrt"
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias sleep='i3lock -c 000000 && systemctl suspend'
+
 # alias zr="cd $(ls -td -- $(pwd)/*/ | head -n 1)"
 alias ..="cd .."
 alias ...="cd ../.."
@@ -48,14 +52,8 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
-
 bindkey -v
-
 
 export PATH=$PATH:/Users/marv/.spicetify
 
 source $HOME/.env
-alias 1s='ls --color=auto'
-alias grep='grep --color=auto'
-alias sleep='i3lock -c 000000 && systemctl suspend'
-
