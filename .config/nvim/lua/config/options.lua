@@ -3,3 +3,21 @@
 -- Add any additional options here
 vim.o.spell = true
 vim.o.spelllang = "en_us,ru"
+--
+-- -- RU → EN for Normal/Visual/Operator-pending modes
+-- -- NOTE: commas in the *to* side must be escaped as "\,".
+-- vim.opt.langmap = table.concat({
+--   -- Uppercase RU -> EN
+--   "ЙЦУКЕНГШЩЗХЪ;QWERTYUIOP[]",
+--   "ФЫВАПРОЛДЖЭ;ASDFGHJKL:'",
+--   "ЯЧСМИТЬБЮ;ZXCVBNM\\,.", -- escape comma as \\, in Lua string
+--   -- Lowercase RU -> EN
+--   "йцукенгшщзхъ;qwertyuiop[]",
+--   "фывапролджэ;asdfghjkl:'",
+--   "ячсмитьбю;zxcvbnm\\,.", -- escape comma here too
+-- }, ",")
+--
+-- -- Optional Insert-mode keymap toggle (CTRL-^ toggles per buffer)
+-- vim.opt.keymap = "russian-jcukenwin"
+-- vim.opt.iminsert = 0
+-- vim.opt.imsearch = 0

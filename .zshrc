@@ -55,4 +55,7 @@ bindkey -v
 export PATH=$PATH:/Users/marv/.spicetify
 
 source $HOME/.env
+alias 1s='ls --color=auto'
+alias grep='grep --color=auto'
+alias sleep='i3lock -c 000000 && systemctl suspend'
 

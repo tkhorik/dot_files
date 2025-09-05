@@ -17,7 +17,7 @@ set textobj-indent
 set NERDTree
 set easymotion
 set which-key
-set clipboard=nnamedplus
+set clipboard=unnamedplus
 " Which‑Key responsiveness
 set notimeout
 
@@ -127,7 +127,8 @@ nmap <leader>gt <Action>(GotoTest)
 " File navigation
 " map <leader>ff <action>(GotoFile)
 map <leader>fr <action>(RecentFiles)
-map <leader>fc <action>(FindInPath)
+map <silent> <Leader>ag viw:action FindInPath<CR><Esc>
+" map <leader>fc <action>(FindInPath)
 map <leader>fl <action>(RecentLocations)
 " ====================
 " Docs / info
