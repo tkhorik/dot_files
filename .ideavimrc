@@ -177,6 +177,8 @@ Plug 'machakann/vim-highlightedyank'
 nnoremap <leader>cs :action FileStructurePopup<CR>
 " nnoremap <leader>b :action ToggleLineBreakpoint<CR>
 
+" Normal mode mapping: press <leader>e to expand editor expand main window
+map <leader>a :action <CR>
 " ──────────────────────────────── Help refs ────────────────────────────────
 " .ideavimrc uses Vim-like syntax:
 "   Docs: https://jb.gg/h38q75
