@@ -57,3 +57,5 @@ bindkey -v
 export PATH=$PATH:/Users/marv/.spicetify
 
 source $HOME/.env
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
