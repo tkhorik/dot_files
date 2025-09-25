@@ -10,7 +10,7 @@ vim.keymap.set("n", "<leader>fb", ":Telescope buffers<cr>")
 vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<cr>")
 
 -- tree
-vim.keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<cr>")
+-- vim.keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<cr>")
 -- vim.keymap.set("n", "<leader>t", vim.cmd.NERDTreeToggle)
 
 -- icon picker
