@@ -251,7 +251,7 @@ run = "move-node-to-workspace 5"
 
 [[on-window-detected]]
 if.app-id = 'com.obsproject.obs-studio'
-run = "move-node-to-workspace 10"
+run = "move-node-to-workspace 9"
 
 [[on-window-detected]]
 if.app-id = 'com.rogueamoeba.Loopback'
@@ -275,4 +275,12 @@ run = "layout floating"
 
 [[on-window-detected]]
 if.app-id = "net.java.openjdk.java"
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = "salutejazz.jazz-app"
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = "com.apple.ScreenSharing"
 run = "layout floating"
