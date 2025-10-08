@@ -18,8 +18,11 @@ set NERDTree
 set easymotion
 set which-key
 set clipboard=unnamedplus
+set clipboard^=unnamed
+
 " Which‑Key responsiveness
 set notimeout
+nnoremap dd "0dd
 
 """ Common settings -------------------------
 set showmode

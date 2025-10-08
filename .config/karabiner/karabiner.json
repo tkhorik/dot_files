@@ -4,6 +4,17 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Left CMD -> en",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "left_command" },
+                                "to": [{ "key_code": "left_command" }],
+                                "to_if_alone": [{ "select_input_source": { "language": "en" } }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Right CMD -> ru",
                         "manipulators": [
                             {
