@@ -8,6 +8,41 @@ let mapleader = ' '
 
 " ───────────────────────── Plugins (IdeaVim features) ─────────────────────
 Plug 'machakann/vim-highlightedyank'
+" set highlightedyank
+let g:highlightedyank_highlight_duration = "200"   " ms; tweak to taste
+let g:highlightedyank_highlight_color = "rgba(160,160,160,155)" " optional
+
+" ------------------------------------------------------------------------------------"
+" ------------------------------------------------------------------------------------"
+
+" Disable IntelliJ clipboard hijacking
+set clipboard=
+set clipboard-=ideacopy
+set clipboard-=ideaput
+
+" Make yanks and deletes linewise by default
+set selection=inclusive
+
+" Better undo/redo history behavior
+set undolevels=10000
+
+" Make sure visual deletes always go into Vim registers
+xnoremap d d
+xnoremap D D
+
+" " Optional: delete without copying (like black-hole register)
+" xnoremap <leader>d "_d
+" xnoremap <leader>x "_x
+"
+" " General quality-of-life Vim settings
+" set number
+" set relativenumber
+" set ignorecase
+" set smartcase
+" set scrolloff=3
+" set incsearch
+" ------------------------------------------------------------------------------------"
+" ------------------------------------------------------------------------------------"
 
 set multiple-cursors
 set commentary
@@ -174,8 +209,6 @@ nmap <C-k> :action SplitterUp<CR>
 " nnoremap <C-w>o :action ActivateEditorComponent<CR>:action UnsplitAll<CR>
 
 map <leader>wu <Action>(Unsplit)
-" Maybe it is notneeded. Yanked area are higlighting anyway
-Plug 'machakann/vim-highlightedyank'
 
 nnoremap <leader>cs :action FileStructurePopup<CR>
 " nnoremap <leader>b :action ToggleLineBreakpoint<CR>
