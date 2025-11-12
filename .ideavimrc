@@ -49,7 +49,11 @@ set commentary
 set ideajoin
 set vim-paragraph-motion
 set textobj-indent
+" ------------------------------------------------------------------------------------
 set NERDTree
+Plug 'preservim/nerdtree'
+nnoremap <leader>q :NERDTreeFind<CR>
+" ------------------------------------------------------------------------------------
 set easymotion
 set which-key
 set clipboard=unnamedplus
@@ -126,7 +130,6 @@ nnoremap gS :action GotoSuperMethod<CR>
 nnoremap ]] :action MethodDown<CR>
 nnoremap [[ :action MethodUp<CR>
 
-nnoremap <leader>q :NERDTreeFind<CR>
 
 " ───────────────────────────── Refactorings ────────────────────────────────
 nnoremap <leader>.  :action ShowIntentionActions<CR>
