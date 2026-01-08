@@ -4,6 +4,66 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Cmd+Shift+4: screenshot to clipboard AND save to Desktop",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "4",
+                                    "modifiers": {
+                                        "mandatory": ["command", "shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "4",
+                                        "modifiers": ["command", "shift", "control"]
+                                    },
+                                    { "shell_command": "sleep 0.3 && /opt/homebrew/bin/pngpaste \"$HOME/Desktop/Screenshot-$(date +%Y-%m-%d_%H-%M-%S).png\"" }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Swap screenshot behavior: Cmd+Shift+4 -> clipboard, Cmd+Ctrl+Shift+4 -> file",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "4",
+                                    "modifiers": {
+                                        "mandatory": ["command", "shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "4",
+                                        "modifiers": ["command", "shift", "control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "4",
+                                    "modifiers": {
+                                        "mandatory": ["command", "shift", "control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "4",
+                                        "modifiers": ["command", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Left CMD -> en",
                         "manipulators": [
                             {
@@ -21,17 +81,6 @@
                                 "from": { "key_code": "right_command" },
                                 "to": [{ "key_code": "right_command" }],
                                 "to_if_alone": [{ "select_input_source": { "language": "ru" } }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Left CMD -> en",
-                        "manipulators": [
-                            {
-                                "from": { "key_code": "left_command" },
-                                "to": [{ "key_code": "left_command" }],
-                                "to_if_alone": [{ "select_input_source": { "language": "en" } }],
                                 "type": "basic"
                             }
                         ]

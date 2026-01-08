@@ -59,3 +59,7 @@ export PATH=$PATH:/Users/marv/.spicetify
 source $HOME/.env
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Added by Antigravity
+export PATH="/Users/marv/.antigravity/antigravity/bin:$PATH"
+export PATH="/opt/homebrew/opt/e2fsprogs/sbin:$PATH"
