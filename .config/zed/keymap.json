@@ -1,0 +1,73 @@
+[
+  // Global Navigation - Works across the whole app (Docks, Terminal, Editor)
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-/": "workspace::ToggleBottomDock",
+    },
+  },
+  // Vim Normal Mode Bindings
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting",
+    "bindings": {
+      // General
+      "space space": "file_finder::Toggle",
+      "space e": "workspace::ToggleLeftDock",
+      "space w": "pane::CloseActiveItem",
+
+      // Formatting
+      "space f": "editor::Format",
+      "space p": "editor::Format",
+      "g q": "editor::Format",
+
+      // Tabs / Panes
+      "shift-l": "pane::ActivateNextItem",
+      "shift-h": "pane::ActivatePrevItem",
+      "space v": "pane::SplitRight",
+      "space h": "workspace::ActivateNextPane",
+      "space l": "workspace::ActivatePreviousPane",
+
+      // Code Navigation
+      "space g d": "editor::GoToDefinition",
+      "space g r": "editor::FindAllReferences",
+      "space c r": "editor::Rename",
+      "shift-k": "editor::Hover",
+    },
+  },
+  // Vim Insert Mode Bindings
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore",
+      "alt-h": "vim::Left",
+      "alt-l": "vim::Right",
+      "alt-j": "vim::Down",
+      "alt-k": "vim::Up",
+    },
+  },
+  // Vim Visual Mode Bindings
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp",
+    },
+  },
+  // File Explorer (Project Panel) Navigation
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock",
+      "a": "project_panel::NewFile",
+      "d": "project_panel::Delete",
+      "r": "project_panel::Rename",
+      "x": "project_panel::Cut",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+    },
+  },
+]
