@@ -19,7 +19,6 @@ alias t=tmux
 
 
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
-alias oo="cd $HOME/Documents/ObsidianVault/"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -48,9 +47,14 @@ alias pwdy="echo $(pwd) | pbcopy"
 alias cl="clear"
 alias z="cd"
 alias lr="ls -lrt"
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias sleep='i3lock -c 000000 && systemctl suspend'
+
+
+alias ls='ls -G'
+alias grep='grep'
+
+alias locksleep='pmset displaysleepnow && pmset sleepnow'
+alias lock='pmset displaysleepnow'
+alias suspend='pmset sleepnow'
 
 # alias zr="cd $(ls -td -- $(pwd)/*/ | head -n 1)"
 alias ..="cd .."
@@ -70,3 +74,8 @@ source $HOME/.env
 # Added by Antigravity
 export PATH="/Users/marv/.antigravity/antigravity/bin:$PATH"
 export PATH="/opt/homebrew/opt/e2fsprogs/sbin:$PATH"
+
+#AdguardHome
+alias adguard='sudo /Applications/AdGuardHome/AdGuardHome'
+
+export PATH="$HOME/.local/bin:$PATH"

@@ -4,7 +4,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Cmd+Shift+4: screenshot to clipboard AND save to Desktop",
+                        "description": "Cmd+Shift+4: interactive screenshot, save to Desktop AND copy image to clipboard",
                         "manipulators": [
                             {
                                 "from": {
@@ -14,13 +14,7 @@
                                         "optional": ["any"]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "4",
-                                        "modifiers": ["command", "shift", "control"]
-                                    },
-                                    { "shell_command": "sleep 0.3 && /opt/homebrew/bin/pngpaste \"$HOME/Desktop/Screenshot-$(date +%Y-%m-%d_%H-%M-%S).png\"" }
-                                ],
+                                "to": [{ "shell_command": "TMPFILE=\"$(mktemp /tmp/ksnap.XXXXXX).png\"; /usr/sbin/screencapture -i -t png \"$TMPFILE\" || exit 0; /usr/bin/osascript -e 'set the clipboard to (read (POSIX file \"'\"$TMPFILE\"'\") as «class PNGf»)' >/dev/null 2>&1; OUT=\"$HOME/Desktop/Screenshot-$(date +%Y-%m-%d_%H-%M-%S).png\"; /bin/mv \"$TMPFILE\" \"$OUT\"" }],
                                 "type": "basic"
                             }
                         ]
@@ -209,6 +203,16 @@
             ],
             "name": "Default profile",
             "selected": true,
+            "simple_modifications": [
+                {
+                    "from": { "key_code": "end" },
+                    "to": [{ "key_code": "f20" }]
+                },
+                {
+                    "from": { "key_code": "fn" },
+                    "to": [{ "key_code": "f20" }]
+                }
+            ],
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
     ]
