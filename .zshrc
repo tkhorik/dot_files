@@ -79,3 +79,4 @@ export PATH="/opt/homebrew/opt/e2fsprogs/sbin:$PATH"
 alias adguard='sudo /Applications/AdGuardHome/AdGuardHome'
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$(npm prefix -g)/bin:$PATH"
