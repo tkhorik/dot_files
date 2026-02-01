@@ -80,3 +80,9 @@ alias adguard='sudo /Applications/AdGuardHome/AdGuardHome'
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$(npm prefix -g)/bin:$PATH"
+
+
+#if there is a session, connect
+if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
+  tmux attach || tmux new -s main
+fi
