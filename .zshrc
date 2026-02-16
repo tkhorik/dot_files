@@ -86,3 +86,4 @@ export PATH="$(npm prefix -g)/bin:$PATH"
 if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
   tmux attach || tmux new -s main
 fi
+export DO_NOT_TRACK=1

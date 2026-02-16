@@ -70,4 +70,13 @@
       "p": "project_panel::Paste",
     },
   },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-alt-z": [
+        "action::Sequence",
+        ["editor::Cancel", "workspace::CloseAllDocks"],
+      ],
+    },
+  },
 ]
