@@ -6,12 +6,14 @@
       "model": "gpt-5.3-codex",
     },
   },
+
   "language_models": {
     "zed.dev": {
       "command": "codex",
       "args": ["--acp"],
     },
   },
+
   "ssh_connections": [
     {
       "host": "192.168.1.101",
@@ -25,25 +27,37 @@
       "nickname": "katy",
     },
   ],
+
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
   },
+
   "session": {
     "trust_all_worktrees": true,
   },
+
   "vim_mode": true,
   "icon_theme": "Zed (Default)",
   "base_keymap": "JetBrains",
+
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "buffer_font_family": "Lilex",
+
   "buffer_font_features": {
     "calt": true,
   },
+
   "theme": {
     "mode": "dark",
     "light": "One Light",
     "dark": "One Dark",
+  },
+  //disabler!
+  // "disable_ai": true,
+  "show_completions_on_input": false,
+  "edit_predictions": {
+    "mode": "subtle",
   },
 }
