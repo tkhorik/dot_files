@@ -1,6 +1,5 @@
 {
-  "assistant": {
-    "version": "2",
+  "agent": {
     "default_model": {
       "provider": "zed.dev",
       "model": "gpt-5.3-codex",
@@ -25,6 +24,11 @@
         },
       ],
       "nickname": "katy",
+    },
+    {
+      "host": "github.com",
+      "args": [],
+      "projects": [],
     },
   ],
 
@@ -56,7 +60,7 @@
   },
   //disabler!
   // "disable_ai": true,
-  "show_completions_on_input": false,
+  // "show_completions_on_input": false,
   "edit_predictions": {
     "mode": "subtle",
   },
