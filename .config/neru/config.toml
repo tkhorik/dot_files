@@ -1,0 +1,47 @@
+[general]
+# hide_overlay_in_screen_share = true
+
+[hotkeys]
+"Shift+f" = "recursive_grid"
+"Shift+s" = "scroll"
+
+[recursive]
+auto_exit = true
+
+[overlay]
+dismiss_on_action = true
+
+[action.key_bindings]
+left_click = "Return"
+right_click = "Shift+Return"
+middle_click = "Shift+M"
+mouse_down = "Shift+D"
+mouse_up = "Shift+U"
+move_mouse_up = "Up"
+move_mouse_down = "Down"
+move_mouse_left = "Left"
+move_mouse_right = "Right"
+
+[hints]
+enable = false
+font_size = 10
+ignore_clickable_check = true
+
+[grid]
+characters = "asdfvbhjkl;"
+sublayer_keys = "asdfhjkl;"
+prewarm_enabled = true
+label_color = "#000000"
+
+[recursive_grid]
+auto_exit_actions = ["left_click","right_click"]
+# grid_cols = 5
+# grid_rows = 5
+# keys = "qwertasdfgcvnmyuiophjkl;z"
+# min_size = 10
+# max_depth = 3
+# label_font_size = 10
+# label_color = "#000000"
+
+[systray]
+enabled = false
