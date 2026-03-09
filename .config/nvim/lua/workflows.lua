@@ -48,3 +48,7 @@ vim.keymap.set(
 )
 -- delete file in current buffer
 vim.keymap.set("n", "<leader>odd", ":!rm '%:p'<cr>:bd<cr>")
+
+vim.keymap.set("n", "<leader>99", function()
+  vim.cmd("edit ~/ai/99/behaviors.md")
+end, { desc = "Open 99 behaviors" })

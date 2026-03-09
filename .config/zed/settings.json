@@ -1,4 +1,13 @@
 {
+  "agent_servers": {
+    "codex": {
+      "favorite_config_option_values": {
+        "reasoning_effort": [
+          "high"
+        ]
+      }
+    }
+  },
   "agent": {
     "default_model": {
       "provider": "zed.dev",

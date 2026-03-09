@@ -87,3 +87,5 @@ if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
   tmux attach || tmux new -s main
 fi
 export DO_NOT_TRACK=1
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+eval "$(tirith init)"

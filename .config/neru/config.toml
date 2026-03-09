@@ -2,18 +2,21 @@
 # hide_overlay_in_screen_share = true
 
 [hotkeys]
-"Shift+f" = "recursive_grid"
-"Shift+s" = "scroll"
+# "Shift+f" = "recursive_grid"
+"Ctrl+Space" = "recursive_grid --action left_click"
+"F20" = "scroll"
 
-[recursive]
-auto_exit = true
+# Unsupported in this branch:
+# [recursive]
+# auto_exit = "true"
 
-[overlay]
-dismiss_on_action = true
+# Unsupported in this branch:
+# [overlay]
+# dismiss_on_action = true
 
 [action.key_bindings]
 left_click = "Return"
-right_click = "Shift+Return"
+right_click = "Cmd+L"
 middle_click = "Shift+M"
 mouse_down = "Shift+D"
 mouse_up = "Shift+U"
@@ -23,7 +26,7 @@ move_mouse_left = "Left"
 move_mouse_right = "Right"
 
 [hints]
-enable = false
+# enable = false
 font_size = 10
 ignore_clickable_check = true
 
@@ -33,15 +36,74 @@ sublayer_keys = "asdfhjkl;"
 prewarm_enabled = true
 label_color = "#000000"
 
+
 [recursive_grid]
-auto_exit_actions = ["left_click","right_click"]
-# grid_cols = 5
-# grid_rows = 5
-# keys = "qwertasdfgcvnmyuiophjkl;z"
-# min_size = 10
-# max_depth = 3
-# label_font_size = 10
-# label_color = "#000000"
+# # 3x3 grid
+# enabled = true
+# grid_cols = 3
+# grid_rows = 3
+# keys = "aksh ldjf"
+reset_key = "'"
+min_size_width = 10
+min_size_height = 10
+max_depth = 2
+label_font_size = 20
+
+label_background = true
+# # Unsupported in this branch:
+ auto_exit_actions = ["left_click", "right_click"]
+# # If you also want right click, add another hotkey like:
+# # "Shift+r" = "recursive_grid --action right_click"
+#
+grid_cols = 5
+grid_rows = 5
+# keys = "asdfghjklqwertyuiopzxcvbn"
+keys = "qwertyuiopasdfghjklzxcvbn"
+
+# keys = "qwertasdfgcv nmyuiophjkl;"
+# keys = "asdfghjklqwertyuiopzxcvbnm,./;"
+#
+# # keys = "aksh ldjf"  # contains Space, so one cell is blank and selected with Space
+# keys = "akshldjfg"
+#
+# reset_key = ","
+#
+# # min_size = 10
+# min_size_width = 10
+# min_size_height = 10
+# max_depth = 5
+#
+# label_font_size = 15
+# label_background = true
+#
+# # label_color = "#ffffff"
+# label_color = "#FF000000"
+#
+# # highlight_color_light = "#4D007A9E"
+# # highlight_color_dark = "#4D00CFCF"
+# highlight_color = "#F2FFD700"
+#
+# # text_color_light = "#FF007A9E"
+# # text_color_dark = "#FF00CFCF"
+# # text_color is not used by recursive_grid in this branch; label_color controls the text
+#
+# line_color = "#FF000000"
+
+[recursive_grid.ui]
+show_next_level_keys = true
+font_size = 20
+sub_key_preview = true
+sub_key_preview_font_size = 12
+
+# label_background = true
+# label_background_color_light = "#FFAAEEFF"
+# label_background_color_dark = "#FF003554"
+# label_background_padding_x = -1
+# label_background_padding_y = -1
+# label_background_border_radius = -1   # notice that this has changed from `corner_radius` to `border_radius` for consistency
+# label_background_border_width = 1
+[scroll]
+stay_active_in_background = true
 
 [systray]
 enabled = false
