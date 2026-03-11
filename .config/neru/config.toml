@@ -8,6 +8,14 @@ passthrough_unbounded_keys_blacklist = []
 "Ctrl+Space" = "recursive_grid --action left_click"
 "F20" = "scroll"
 
+# Unsupported in this branch:
+# [recursive]
+# auto_exit = "true"
+
+# Unsupported in this branch:
+# [overlay]
+# dismiss_on_action = true
+
 [action.key_bindings]
 left_click = "Return"
 right_click = "Cmd+L"
@@ -41,6 +49,7 @@ reset_key = "'"
 min_size_width = 10
 min_size_height = 10
 max_depth = 2
+label_font_size = 20
 
 auto_exit_actions = ["left_click", "right_click"]
 # # If you also want right click, add another hotkey like:
@@ -48,8 +57,8 @@ auto_exit_actions = ["left_click", "right_click"]
 
 grid_cols = 5
 grid_rows = 5
-# keys = "asdfghjklqwertyuiopzxcvbn"
-keys = "qwertyuiopasdfghjklzxcvbn"
+keys = "asdfghjklqwertyuiopzxcvbn"
+# keys = "qwertyuiopasdfghjklzxcvbn"
 
 # keys = "qwertasdfgcv nmyuiophjkl;"
 
@@ -60,11 +69,31 @@ keys = "qwertyuiopasdfghjklzxcvbn"
 # keys = "akshldjfg"
 #
 # reset_key = ","
+#
+# # min_size = 10
+# min_size_width = 10
+# min_size_height = 10
+# max_depth = 5
+#
+# label_font_size = 15
+# label_background = true
+#
+# # label_color = "#ffffff"
+# label_color = "#FF000000"
+#
+# # highlight_color_light = "#4D007A9E"
+# # highlight_color_dark = "#4D00CFCF"
+# highlight_color = "#F2FFD700"
+#
+# # text_color_light = "#FF007A9E"
+# # text_color_dark = "#FF00CFCF"
+# # text_color is not used by recursive_grid in this branch; label_color controls the text
+#
+# line_color = "#FF000000"
 
 [recursive_grid.ui]
 font_size = 15
-
-sub_key_preview = true                     # Draw miniature key grid inside each cell
+sub_key_preview = true
 sub_key_preview_font_size = 8
 sub_key_preview_text_color_light = "#FFFF0000"
 sub_key_preview_text_color_dark = "#FFFF0000"
@@ -77,25 +106,31 @@ line_color_dark = "#FFFF0000"
 text_color_dark = "#FFFF0000"
 highlight_color_dark = "#22FFFFFF"
 
+[scroll]
+stay_active_in_background = true
+
+[mode_indicator.ui]
+font_size = 4
+border_radius = 50
+border_color_light = "#00000000"
+border_color_dark = "#00000000"
+border_width = 0
+padding_x = -1
+padding_y = -1
+indicator_x_offset = 10
+indicator_y_offset = -20
+
 [mode_indicator.scroll]
 enabled = true
-text = "Scrolllll"
-
-[mode_indicator.hints]
-enabled = false
-text = "Hints"
-
-[mode_indicator.grid]
-enabled = false
-text = "Grid"
+text = " "
+background_color_light = "#FF00CF55"
+background_color_dark = "#FF00CF55"
 
 [mode_indicator.recursive_grid]
-enabled = false
-text = "Recursive Grid"
-[smooth_cursor]
-move_mouse_enabled = true
-steps = 10                                  # Number of intermediate positions
-delay = 1    
+enabled = true
+text = " "
+background_color_light = "#FFFFCF55"
+background_color_dark = "#FFFFCF55"
 
 [systray]
 enabled = false
