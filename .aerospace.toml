@@ -238,7 +238,7 @@ if.app-id = 'com.microsoft.VSCode'
 run = "move-node-to-workspace N"
 
 [[on-window-detected]]
-if.app-id = 'ru.keepcoder.Telegram'
+if.app-id = 'com.tdesktop.Telegram'
 run = "layout floating"
 
 [[on-window-detected]]
@@ -303,6 +303,13 @@ run = "layout floating"
 
 [[on-window-detected]]
 if.app-id = 'su.ffg.happ'
+run = [
+    'layout floating', 
+    'move-node-to-workspace 1'
+]
+
+[[on-window-detected]]
+if.app-id = 'net.ankiweb.launcher'
 run = [
     'layout floating', 
     'move-node-to-workspace 1'
