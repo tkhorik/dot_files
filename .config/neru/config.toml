@@ -57,8 +57,8 @@ auto_exit_actions = ["left_click", "right_click"]
 
 grid_cols = 5
 grid_rows = 5
-keys = "asdfghjklqwertyuiopzxcvbn"
-# keys = "qwertyuiopasdfghjklzxcvbn"
+# keys = "asdfghjklqwertyuiopzxcvbn"
+keys = "qwertyuiopasdfghjklzxcvbn"
 
 # keys = "qwertasdfgcv nmyuiophjkl;"
 
