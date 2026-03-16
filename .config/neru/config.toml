@@ -1,7 +1,7 @@
 [general]
 hide_overlay_in_screen_share = false
 passthrough_unbounded_keys = true
-passthrough_unbounded_keys_blacklist = []
+should_exit_after_passthrough = true
 
 [hotkeys]
 # "Shift+f" = "recursive_grid"
@@ -40,26 +40,17 @@ label_color = "#000000"
 
 
 [recursive_grid]
-# # 3x3 grid
-# enabled = true
-# grid_cols = 3
-# grid_rows = 3
-# keys = "aksh ldjf"
-reset_key = "'"
-min_size_width = 10
-min_size_height = 10
-max_depth = 2
-label_font_size = 20
-
 auto_exit_actions = ["left_click", "right_click"]
+# min_size_width = 25
+# min_size_height = 25
+
 # # If you also want right click, add another hotkey like:
 # # "Shift+r" = "recursive_grid --action right_click"
 
 grid_cols = 5
 grid_rows = 5
-# keys = "asdfghjklqwertyuiopzxcvbn"
 keys = "qwertyuiopasdfghjklzxcvbn"
-
+# keys = "asdfghjklqwertyuiopzxcvbn"
 # keys = "qwertasdfgcv nmyuiophjkl;"
 
 # y9san9's keys
@@ -67,34 +58,32 @@ keys = "qwertyuiopasdfghjklzxcvbn"
 #
 # # keys = "aksh ldjf"  # contains Space, so one cell is blank and selected with Space
 # keys = "akshldjfg"
-#
-# reset_key = ","
-#
-# # min_size = 10
-# min_size_width = 10
-# min_size_height = 10
-# max_depth = 5
-#
-# label_font_size = 15
-# label_background = true
-#
-# # label_color = "#ffffff"
-# label_color = "#FF000000"
-#
-# # highlight_color_light = "#4D007A9E"
-# # highlight_color_dark = "#4D00CFCF"
-# highlight_color = "#F2FFD700"
-#
-# # text_color_light = "#FF007A9E"
-# # text_color_dark = "#FF00CFCF"
-# # text_color is not used by recursive_grid in this branch; label_color controls the text
-#
-# line_color = "#FF000000"
+
+ reset_key = ","
+
+ # # min_size = 10
+ # min_size_width = 10
+ # min_size_height = 10
+ max_depth = 3
+
+
+ # label_color = "#ffffff"
+ label_color = "#FF000000"
+
+ # highlight_color_light = "#4D007A9E"
+ # highlight_color_dark = "#4D00CFCF"
+ highlight_color = "#F2FFD700"
+
+ # text_color_light = "#FF007A9E"
+ # text_color_dark = "#FF00CFCF"
+ # text_color is not used by recursive_grid in this branch; label_color controls the text
+ line_color = "#FF000000"
+
 
 [recursive_grid.ui]
-font_size = 15
 sub_key_preview = true
-sub_key_preview_font_size = 8
+font_size = 20
+sub_key_preview_font_size = 10
 sub_key_preview_text_color_light = "#FFFF0000"
 sub_key_preview_text_color_dark = "#FFFF0000"
 
@@ -105,6 +94,15 @@ highlight_color_light = "#22FFFFFF"
 line_color_dark = "#FFFF0000"
 text_color_dark = "#FFFF0000"
 highlight_color_dark = "#22FFFFFF"
+
+label_background = false
+label_background_color_light = "#FFAAEEFF"
+label_background_color_dark = "#FF003554"
+label_background_padding_x = -1
+label_background_padding_y = -1
+label_background_border_radius = -1
+label_background_border_width = 1
+
 
 [scroll]
 stay_active_in_background = true

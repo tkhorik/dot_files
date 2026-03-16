@@ -62,11 +62,12 @@
     "calt": true,
   },
 
-  "theme": {
-    "mode": "dark",
-    "light": "One Light",
-    "dark": "One Dark",
-  },
+    "theme": {
+      "mode": "system",
+      "light": "Gruvbox Light Soft",
+      "dark": "Ayu Mirage"
+    }
+  }
   //disabler!
   // "disable_ai": true,
   // "show_completions_on_input": false,
