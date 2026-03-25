@@ -1,101 +1,68 @@
 [general]
-hide_overlay_in_screen_share = false
+hide_overlay_in_screen_share = true
 passthrough_unbounded_keys = true
 should_exit_after_passthrough = true
 
 [hotkeys]
-# "Shift+f" = "recursive_grid"
-"Ctrl+Space" = "recursive_grid --action left_click"
-"F20" = "scroll"
+"Ctrl+K" = "scroll"
+"Ctrl+J" = "recursive_grid --action left_click"
+"Shift+Space" = "recursive_grid --action left_click --repeat"
 
-# Unsupported in this branch:
-# [recursive]
-# auto_exit = "true"
-
-# Unsupported in this branch:
-# [overlay]
-# dismiss_on_action = true
 
 [action.key_bindings]
 left_click = "Return"
-right_click = "Cmd+L"
-middle_click = "Shift+M"
-mouse_down = "Shift+D"
-mouse_up = "Shift+U"
-move_mouse_up = "Up"
-move_mouse_down = "Down"
-move_mouse_left = "Left"
-move_mouse_right = "Right"
-
-[hints]
-# enable = false
-font_size = 10
-ignore_clickable_check = true
-
-[grid]
-characters = "asdfvbhjkl;"
-sublayer_keys = "asdfhjkl;"
-prewarm_enabled = true
-label_color = "#000000"
-
+right_click = "Ctrl+R"
+middle_click = "Ctrl+M"
+# mouse_down = "Shift+D"
+# mouse_up = "Shift+U"
+# mouse_move_up = "Up"
+# mouse_move_down = "Down"
+# mouse_move_left = "Left"
+# mouse_move_right = "Right"
 
 [recursive_grid]
-auto_exit_actions = ["left_click", "right_click"]
-# min_size_width = 25
-# min_size_height = 25
-
-# # If you also want right click, add another hotkey like:
-# # "Shift+r" = "recursive_grid --action right_click"
-
+auto_exit_actions = []
+min_size_width = 10
+min_size_height = 10
+reset_key = ","
+max_depth = 2
+#                                                               
+# 5x5 greed
+#speed_run
+# keys = "qweasdzxcrfvtgbyhnujmikol"
+keys = "qwertasdfghjklnzxcvbyuiop"
+#for memory
+# keys = "qwertyuiopasdfghjklnzxcvb"
 grid_cols = 5
 grid_rows = 5
-keys = "qwertyuiopasdfghjklzxcvbn"
-# keys = "asdfghjklqwertyuiopzxcvbn"
-# keys = "qwertasdfgcv nmyuiophjkl;"
+# was
+# keys = "qwertyuiopasdfghjklzxcvbn"
 
 # y9san9's keys
 # keys = "asdfghjklqwertyuiopzxcvbnm,./;"
-#
-# # keys = "aksh ldjf"  # contains Space, so one cell is blank and selected with Space
-# keys = "akshldjfg"
-
- reset_key = ","
-
- # # min_size = 10
- # min_size_width = 10
- # min_size_height = 10
- max_depth = 3
-
-
- # label_color = "#ffffff"
- label_color = "#FF000000"
-
- # highlight_color_light = "#4D007A9E"
- # highlight_color_dark = "#4D00CFCF"
- highlight_color = "#F2FFD700"
-
- # text_color_light = "#FF007A9E"
- # text_color_dark = "#FF00CFCF"
- # text_color is not used by recursive_grid in this branch; label_color controls the text
- line_color = "#FF000000"
-
+#                                                               
+# # 5x3 greed
+# grid_cols = 5
+# grid_rows = 3
+# keys = "ertyudfghjcvbnm"
+#                                                               
 
 [recursive_grid.ui]
 sub_key_preview = true
-font_size = 20
-sub_key_preview_font_size = 10
+font_size = 16
+sub_key_preview_font_size = 12
 sub_key_preview_text_color_light = "#FFFF0000"
 sub_key_preview_text_color_dark = "#FFFF0000"
 
-line_color_light = "#FFFF0000"
+line_color_light = "#00000000"
 text_color_light = "#FFFF0000"
 highlight_color_light = "#22FFFFFF"
 
-line_color_dark = "#FFFF0000"
+line_color_dark = "#00000000"
 text_color_dark = "#FFFF0000"
 highlight_color_dark = "#22FFFFFF"
 
-label_background = false
+label_background = true
 label_background_color_light = "#FFAAEEFF"
 label_background_color_dark = "#FF003554"
 label_background_padding_x = -1
