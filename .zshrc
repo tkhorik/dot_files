@@ -88,4 +88,6 @@ if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
 fi
 export DO_NOT_TRACK=1
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-eval "$(tirith init)"
+if command -v tirith >/dev/null 2>&1; then
+  eval "$(tirith init)"
+fi

@@ -7,7 +7,7 @@ should_exit_after_passthrough = true
 "Ctrl+K" = "scroll"
 "Ctrl+J" = "recursive_grid --action left_click"
 "Shift+Space" = "recursive_grid --action left_click --repeat"
-
+"Option+Return" = "action left_click"
 
 [action.key_bindings]
 left_click = "Return"
@@ -22,17 +22,17 @@ middle_click = "Ctrl+M"
 
 [recursive_grid]
 auto_exit_actions = []
-min_size_width = 10
-min_size_height = 10
+min_size_width = 15
+min_size_height = 15
 reset_key = ","
-max_depth = 2
+max_depth = 3
 #                                                               
 # 5x5 greed
 #speed_run
 # keys = "qweasdzxcrfvtgbyhnujmikol"
-keys = "qwertasdfghjklnzxcvbyuiop"
+# keys = "qwertasdfghjklnzxcvbyuiop"
 #for memory
-# keys = "qwertyuiopasdfghjklnzxcvb"
+keys = "qwertyuiopasdfghjklnzxcvb"
 grid_cols = 5
 grid_rows = 5
 # was
@@ -59,7 +59,7 @@ text_color_light = "#FFFF0000"
 highlight_color_light = "#22FFFFFF"
 
 line_color_dark = "#00000000"
-text_color_dark = "#FFFF0000"
+# text_color_dark = "#FFFF0000"
 highlight_color_dark = "#22FFFFFF"
 
 label_background = true
@@ -74,7 +74,11 @@ label_background_border_width = 1
 [scroll]
 stay_active_in_background = true
 
+## ============================================================================
+# Mode Indicator
+# ============================================================================
 [mode_indicator.ui]
+font_family = "JetBrainsMonoNLNFP-Bold"
 font_size = 4
 border_radius = 50
 border_color_light = "#00000000"
@@ -98,4 +102,10 @@ background_color_light = "#FFFFCF55"
 background_color_dark = "#FFFFCF55"
 
 [systray]
-enabled = false
+# enabled = false
+
+# ============================================================================
+# Smooth Cursor Movement
+# ============================================================================
+[smooth_cursor]
+move_mouse_enabled = true
