@@ -4,6 +4,33 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Map End (External) and Fn (MacBook) to Hyper",
+                        "manipulators": [
+                            {
+                                "description": "External Keyboard: End -> Hyper",
+                                "from": { "key_code": "end" },
+                                "to": [
+                                    {
+                                        "key_code": "left_control",
+                                        "modifiers": ["left_command", "left_option", "left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "MacBook Keyboard: Fn -> Hyper",
+                                "from": { "key_code": "fn" },
+                                "to": [
+                                    {
+                                        "key_code": "left_control",
+                                        "modifiers": ["left_command", "left_option", "left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Cmd+Shift+4: interactive screenshot, save to Desktop AND copy image to clipboard",
                         "manipulators": [
                             {
@@ -165,16 +192,6 @@
             ],
             "name": "Default profile",
             "selected": true,
-            "simple_modifications": [
-                {
-                    "from": { "key_code": "end" },
-                    "to": [{ "key_code": "f20" }]
-                },
-                {
-                    "from": { "key_code": "fn" },
-                    "to": [{ "key_code": "f20" }]
-                }
-            ],
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
     ]
