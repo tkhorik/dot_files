@@ -206,7 +206,11 @@ if.app-id = 'org.mozilla.firefox'
 run = "move-node-to-workspace B"
 
 [[on-window-detected]]
-if.app-id = 'com.google.Chrome'
+if.app-id = 'org.mozilla.firefox'
+run = "move-node-to-workspace B"
+
+[[on-window-detected]]
+if.app-id = 'net.imput.helium'
 run = "move-node-to-workspace B"
 
 [[on-window-detected]]
@@ -244,10 +248,6 @@ run = "layout floating"
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
 run = "move-node-to-workspace D"
-
-# [[on-window-detected]]
-# if.app-id = 'com.cisco.secureclient.gui'
-# run = "move-node-to-workspace 5"
 
 [[on-window-detected]]
 if.app-id = 'com.linguee.DeepLCopyTranslator'
@@ -304,13 +304,23 @@ run = "layout floating"
 [[on-window-detected]]
 if.app-id = 'su.ffg.happ'
 run = [
-    'layout floating', 
+    'layout floating',
     'move-node-to-workspace 1'
 ]
 
 [[on-window-detected]]
 if.app-id = 'net.ankiweb.launcher'
 run = [
-    'layout floating', 
+    'layout floating',
     'move-node-to-workspace 1'
 ]
+
+ [[on-window-detected]]
+ if.app-id = 'com.apple.ScreenSharing'
+ run = [
+     'layout floating',
+ ]
+
+# [[on-window-detected]]
+# if.app-id = 'com.apple.ScreenSharing'
+# run = "layout tiling"

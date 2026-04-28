@@ -18,7 +18,6 @@ export VISUAL=nvim
 alias t=tmux
 
 
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -88,6 +87,5 @@ if [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
 fi
 export DO_NOT_TRACK=1
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-if command -v tirith >/dev/null 2>&1; then
-  eval "$(tirith init)"
-fi
+
+# alias opencode='OPENCODE_DISABLE_MODELS_FETCH=1 opencode'
