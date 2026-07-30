@@ -12,14 +12,13 @@ mode_exit_keys = ["escape", "Ctrl+C"]
 "Cmd+Shift+C" = "__disabled__"
 "Cmd+Shift+S" = "__disabled__"
 
+"Option+Escape" = "recursive_grid --cursor-selection-mode hold"
+"Ctrl+S" = "scroll"
+"Option+Cmd+Space" = "action right_click"
 
 "Ctrl+K" = ["action left_click", "idle"]
-"Ctrl+S" = "scroll"
 "Ctrl+J" = ["recursive_grid --action left_click"]
 # "Shift+Space" = ["recursive_grid --action left_click --repeat"]
-
-"Option+Escape" = "recursive_grid --cursor-selection-mode hold"
-"Option+Cmd+Space" = "action right_click"
 
 # [action.key_bindings]
 # left_click = "Return"
@@ -39,16 +38,6 @@ mode_exit_keys = ["escape", "Ctrl+C"]
 "Cmd+Alt+Shift+Ctrl+P" = "exec open -a \"1Passwords\""
 "Cmd+Alt+Shift+Ctrl+S" = "exec open -a \"System Settings\""
 "Cmd+Alt+Shift+Ctrl+A" = "exec open -a \"Activity Monitor\""
-
-# "Alt+Shift+1" = "exec move-to-space 1"
-# "Alt+Shift+2" = "exec move-to-space 2"
-# "Alt+Shift+3" = "exec move-to-space 3"
-# "Alt+Shift+4" = "exec move-to-space 4"
-# "Alt+Shift+5" = "exec move-to-space 5"
-# "Alt+Shift+6" = "exec move-to-space 6"
-# "Alt+Shift+7" = "exec move-to-space 7"
-# "Alt+Shift+8" = "exec move-to-space 8"
-# "Alt+Shift+9" = "exec move-to-space 9"
 
 [recursive_grid]
 min_size_height = 5
@@ -95,11 +84,10 @@ sub_key_preview_text_color = { light = "#00000000", dark = "#00000000" }
 "Shift+Left" = "action move_mouse_relative --dx=-5 --dy=0"
 "Shift+Right" = "action move_mouse_relative --dx=5 --dy=0"
 
-"Space" = ["action left_click", "idle"]
+"Ctrl+K" = ["action left_click", "idle"]
 "Shift+K" = ["action left_click", "action reset"]
-# "Shift+Space" = ["action left_click", "action reset"]
+# "shift+space" = ["action left_click", "action reset"]
 "Ctrl+Space" = ["action right_click", "idle"]
-# "Cmd+Space" = ["action right_click", "idle"]
 "Cmd+Shift+Space" = ["action right_click", "action reset"]
 
 "Shift+M" = "action middle_click"
@@ -110,15 +98,15 @@ sub_key_preview_text_color = { light = "#00000000", dark = "#00000000" }
 "," = "action reset"
 "." = ["action move_mouse", "scroll"]
 
-"Ctrl+J" = "action scroll_down"
-"Ctrl+K" = "action scroll_up"
-"Ctrl+H" = "action scroll_left"
-"Ctrl+L" = "action scroll_right"
-"Ctrl+U" = "action page_up"
-"Ctrl+D" = "action page_down"
-"Ctrl+T" = "action go_top"
-"Ctrl+B" = "action go_bottom"
-"Ctrl+M" = "action move_mouse"
+# "Ctrl+J" = "action scroll_down"
+# "Ctrl+K" = "action scroll_up"
+# "Ctrl+H" = "action scroll_left"
+# "Ctrl+L" = "action scroll_right"
+# "Ctrl+U" = "action page_up"
+# "Ctrl+D" = "action page_down"
+# "Ctrl+T" = "action go_top"
+# "Ctrl+B" = "action go_bottom"
+# "Ctrl+M" = "action move_mouse"
 
 "Shift+L" = "__disabled__"
 "Shift+R" = "__disabled__"
@@ -161,4 +149,4 @@ max_duration = 200                          # Maximum animation duration in ms
 duration_per_pixel = 0.1                    # Ms per pixel for adaptive duration
 
 [systray]
-enabled = true
+enabled = false 

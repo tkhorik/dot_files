@@ -86,7 +86,7 @@ nnoremap <leader>rf <Action>(IntroduceField)
 nnoremap <leader>rs <Action>(ChangeSignature)
 nnoremap <leader>rr <Action>(Refactorings.QuickListPopupAction)
 
-" --- ФОРМАТИРОВАНИЕ И КОД ---
+howIntentionActions)u
 nnoremap <leader>f= <Action>(ReformatCode)
 nnoremap <leader>.  <Action>(ShowIntentionActions)
 nnoremap <leader>pg <Action>(Generate)

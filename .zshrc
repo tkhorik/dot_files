@@ -1,3 +1,7 @@
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
 # OPENSPEC:START
 # OpenSpec shell completions configuration
 fpath=("/Users/marv/.zsh/completions" $fpath)
@@ -89,3 +93,10 @@ export DO_NOT_TRACK=1
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 # alias opencode='OPENCODE_DISABLE_MODELS_FETCH=1 opencode'
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+
+# Added by Antigravity IDE
+export PATH="/Users/marv/.antigravity-ide/antigravity-ide/bin:$PATH"
