@@ -222,7 +222,7 @@ if.app-id = 'com.jetbrains.intellij'
 run = "move-node-to-workspace P"
 
 [[on-window-detected]]
-if.app-id = 'ai.perplexity.mac'
+if.app-id = 'com.anthropic.claudefordesktop'
 run = "move-node-to-workspace P"
 
 [[on-window-detected]]
@@ -302,6 +302,10 @@ if.app-id = "com.openai.chat"
 run = "layout floating"
 
 [[on-window-detected]]
+if.app-id = "com.nordvpn.macos"
+run = "layout floating"
+
+[[on-window-detected]]
 if.app-id = 'su.ffg.happ'
 run = [
     'layout floating',
@@ -320,7 +324,3 @@ run = [
  run = [
      'layout floating',
  ]
-
-# [[on-window-detected]]
-# if.app-id = 'com.apple.ScreenSharing'
-# run = "layout tiling"

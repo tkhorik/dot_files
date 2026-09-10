@@ -148,5 +148,11 @@ steps = 10                                  # Number of intermediate positions
 max_duration = 200                          # Maximum animation duration in ms
 duration_per_pixel = 0.1                    # Ms per pixel for adaptive duration
 
+[[app_configs]]
+bundle_id = "com.apple.TextEdit"
+
+[app_configs.hotkeys]
+"Cmd+Shift+9" = "action left_click"
+
 [systray]
 enabled = false 

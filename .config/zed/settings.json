@@ -1,4 +1,8 @@
 {
+  "edit_predictions": {
+    "provider": "zed",
+    "mode": "subtle"
+  },
   "project_panel": {
     "dock": "right"
   },
@@ -12,16 +16,27 @@
     "dock": "right"
   },
   "agent_servers": {
+    "kiro": {
+      "default_mode": "kiro_guide",
+      "type": "custom",
+      "command": "/Users/marv/.local/bin/kiro-cli",
+      "args": ["acp"],
+      "env": {}
+    },
+    "antigravity-acp": {
+      "default_config_options": {
+        "model": "gemini-3.8-flash-high",
+        "mode": "default"
+      },
+      "type": "registry"
+    },
     "codex-acp": {
       "default_config_options": {
-        "model": "gpt-5.4-mini"
+        "model": "gpt-6-astra"
       },
       "type": "registry"
     },
     "kimi": {
-      "type": "registry"
-    },
-    "gemini": {
       "type": "registry"
     },
     "github-copilot-cli": {
@@ -33,6 +48,9 @@
       "type": "registry"
     },
     "claude-acp": {
+      "default_config_options": {
+        "model": "sonnet"
+      },
       "type": "registry"
     }
   },
@@ -40,17 +58,15 @@
     "dock": "left",
     "default_model": {
       "provider": "zed.dev",
-      "model": "gpt-5.3-codex",
-    },
+      "model": "gpt-5.3-codex"
+    }
   },
-
   "language_models": {
     "zed.dev": {
       "command": "codex",
-      "args": ["--acp"],
-    },
+      "args": ["--acp"]
+    }
   },
-
   "ssh_connections": [
     {
       "host": "192.168.1.101",
@@ -58,49 +74,36 @@
       "args": [],
       "projects": [
         {
-          "paths": ["/Users/katy/Projects/petclinic"],
-        },
+          "paths": ["/Users/katy/Projects/petclinic"]
+        }
       ],
-      "nickname": "katy",
+      "nickname": "katy"
     },
     {
       "host": "github.com",
       "args": [],
-      "projects": [],
-    },
+      "projects": []
+    }
   ],
-
   "telemetry": {
     "diagnostics": false,
-    "metrics": false,
+    "metrics": false
   },
-
   "session": {
-    "trust_all_worktrees": true,
+    "trust_all_worktrees": true
   },
-
   "vim_mode": true,
   "icon_theme": "Zed (Default)",
   "base_keymap": "JetBrains",
-
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "buffer_font_family": "Lilex",
-
   "buffer_font_features": {
-    "calt": true,
+    "calt": true
   },
-
-    "theme": {
-      "mode": "system",
-      "light": "Gruvbox Light Soft",
-      "dark": "Ayu Mirage"
-    }
+  "theme": {
+    "mode": "system",
+    "light": "Gruvbox Light Soft",
+    "dark": "Ayu Mirage"
   }
-  //disabler!
-  // "disable_ai": true,
-  // "show_completions_on_input": false,
-  "edit_predictions": {
-    "mode": "subtle",
-  },
 }
