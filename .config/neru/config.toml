@@ -1,5 +1,5 @@
 [general]
-hide_overlay_in_screen_share = true
+# hide_overlay_in_screen_share = true
 passthrough_unbounded_keys = true
 should_exit_after_passthrough = true
 

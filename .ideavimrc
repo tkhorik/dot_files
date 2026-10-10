@@ -1,244 +1,154 @@
 " ==============================================================================
-" ИНИЦИАЛИЗАЦИЯ И БАЗОВЫЕ НАСТРОЙКИ
+" INITIALIZATION & BASIC SETTINGS
 " ==============================================================================
+
 let mapleader = ' '
 
-" Базовые настройки Vim
+" Basic Vim settings
 set ignorecase
 set smartcase
 set incsearch
 set scrolloff=5
 set showmode
 set number
-set relativenumber      " Относительные номера строк (Mainstream)
+set relativenumber
 
-" Общий буфер обмена с ОС (без устаревших костылей)
+" System clipboard
 set clipboard+=unnamedplus
+set clipboard+=ideaput
 
-" Настройки IdeaVim
+" IdeaVim settings
 set ideastatusicon=gray
+set ideajoin
+
+" IdeaVim plugins
 set multiple-cursors
 set commentary
-set ideajoin
 set vim-paragraph-motion
 set textobj-indent
 set highlightedyank
 set NERDTree
 set easymotion
 set which-key
-set surround            " Must-have (tpope/vim-surround)
+set surround
 
-" Настройки плагинов
+" Which-Key
+set notimeout
+let g:WhichKey_ShowVimActions = "true"
+let g:WhichKey_PrefixStyle = "bold"
+
+" Highlighted Yank
 let g:highlightedyank_highlight_duration = "200"
 let g:highlightedyank_highlight_color = "rgba(160,160,160,155)"
+
+" Text objects / EasyMotion
 let g:argtextobj_pairs = "[:],(:),<:>"
-let g:WhichKey_ShowVimActions = "true"
-let g:WhichKey_PrefixStyle    = "bold"
-let g:EasyMotion_smartcase  = 1
-let g:WhichKey_Timeout = 0    " notimeout аналог для which-key
+let g:EasyMotion_smartcase = 1
 
 " ==============================================================================
-" CORE MAPPINGS (VIM)
+" CORE MAPPINGS
 " ==============================================================================
-" Быстрый переход между сплитами (окнами)
-nnoremap <C-h> <Action>(PrevSplitter)
-nnoremap <C-l> <Action>(NextSplitter)
-nnoremap <C-j> <Action>(SplitterDown)
-nnoremap <C-k> <Action>(SplitterUp)
 
-" Убрать 'gC', чтобы использовать 'gcc' / 'gc' (стандарт Commentary)
-" Но если хотите использовать gC для блочного коммента (IntelliJ):
-nnoremap gC <Action>(CommentByBlockComment)
-vnoremap gC <Action>(CommentByBlockComment)
+" Navigate between editor splits
+nmap <C-h> <Action>(PrevSplitter)
+nmap <C-l> <Action>(NextSplitter)
+nmap <C-j> <Action>(SplitterDown)
+nmap <C-k> <Action>(SplitterUp)
 
-" Добавить/убрать копирование при x/d (оставил как было)
+" Block comment
+nmap gC <Action>(CommentByBlockComment)
+vmap gC <Action>(CommentByBlockComment)
+
+" Delete line without overwriting unnamed register
 nnoremap dd "0dd
 
 " ==============================================================================
-" IDEA SHORTCUTS (via Leader)
+" NAVIGATION / SEARCH
 " ==============================================================================
 
-" --- НАВИГАЦИЯ / ПОИСК ---
-nnoremap <leader>ff <Action>(GotoFile)
-nnoremap <leader>fc <Action>(GotoClass)
-nnoremap <leader>fs <Action>(GotoSymbol)
-nnoremap <leader>fr <Action>(RecentFiles)
-nnoremap <leader>fl <Action>(RecentLocations)
-nnoremap <leader>ga <Action>(GotoAction)
-nnoremap <leader>ag <Action>(FindInPath)
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fc <Action>(GotoClass)
+nmap <leader>fs <Action>(GotoSymbol)
+nmap <leader>fr <Action>(RecentFiles)
+nmap <leader>fl <Action>(RecentLocations)
+nmap <leader>ga <Action>(GotoAction)
+nmap <leader>ag <Action>(FindInPath)
 
-" --- ПРЫЖКИ ПО КОДУ ---
-nnoremap <leader>gd <Action>(GotoDeclaration)
-nnoremap <leader>gy <Action>(GotoTypeDeclaration)
-nnoremap <leader>gi <Action>(GotoImplementation)
-nnoremap <leader>gu <Action>(ShowUsages)
-nnoremap <leader>gt <Action>(GotoTest)
-nnoremap ]e <Action>(GotoNextError)
-nnoremap [e <Action>(GotoPreviousError)
-nnoremap ]] <Action>(MethodDown)
-nnoremap [[ <Action>(MethodUp)
+" ==============================================================================
+" CODE NAVIGATION
+" ==============================================================================
 
-" --- РЕФАКТОРИНГ ---
-nnoremap <leader>rn <Action>(RenameElement)
-nnoremap <leader>rm <Action>(ExtractMethod)
-nnoremap <leader>rv <Action>(IntroduceVariable)
-nnoremap <leader>rf <Action>(IntroduceField)
-nnoremap <leader>rs <Action>(ChangeSignature)
-nnoremap <leader>rr <Action>(Refactorings.QuickListPopupAction)
+nmap <leader>gd <Action>(GotoDeclaration)
+nmap <leader>gy <Action>(GotoTypeDeclaration)
+nmap <leader>gi <Action>(GotoImplementation)
+nmap <leader>gu <Action>(ShowUsages)
+nmap <leader>gt <Action>(GotoTest)
 
-howIntentionActions)u
-nnoremap <leader>f= <Action>(ReformatCode)
-nnoremap <leader>.  <Action>(ShowIntentionActions)
-nnoremap <leader>pg <Action>(Generate)
-vnoremap <leader>l  <Action>(ReformatCode)
+nmap ]e <Action>(GotoNextError)
+nmap [e <Action>(GotoPreviousError)
 
-" --- ОКНА / ИНТЕРФЕЙС ---
-nnoremap <leader>z  <Action>(ToggleDistractionFreeMode)
-nnoremap <leader>x  <Action>(ToggleZenMode)
-nnoremap <leader>t  <Action>(ActivateTerminalToolWindow)
-nnoremap <leader>wu <Action>(Unsplit)
-nnoremap <leader>ps <Action>(FileStructurePopup)
-nnoremap <leader>pv <Action>(SelectInProjectView)
-nnoremap <leader>q  <Action>(NERDTreeFind)
+nmap ]] <Action>(MethodDown)
+nmap [[ <Action>(MethodUp)
 
-" --- ОСТАЛЬНОЕ ---
-nnoremap K  <Action>(QuickJavaDoc)
-nnoremap gI <Action>(QuickImplementations)
-nnoremap <leader>9 <Action>(com.testoutputselector.FocusTestRunnerAction)
+" ==============================================================================
+" REFACTORING
+" ==============================================================================
+
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>rm <Action>(ExtractMethod)
+nmap <leader>rv <Action>(IntroduceVariable)
+nmap <leader>rf <Action>(IntroduceField)
+nmap <leader>rs <Action>(ChangeSignature)
+nmap <leader>rr <Action>(Refactorings.QuickListPopupAction)
+
+" ==============================================================================
+" FORMATTING / INTENTIONS / GENERATION
+" ==============================================================================
+
+nmap <leader>f= <Action>(ReformatCode)
+nmap <leader>. <Action>(ShowIntentionActions)
+nmap <leader>pg <Action>(Generate)
+
+vmap <leader>l <Action>(ReformatCode)
+
+" ==============================================================================
+" WINDOWS / UI
+" ==============================================================================
+
+nmap <leader>z <Action>(ToggleDistractionFreeMode)
+nmap <leader>x <Action>(ToggleZenMode)
+nmap <leader>t <Action>(ActivateTerminalToolWindow)
+
+nmap <leader>wu <Action>(Unsplit)
+
+nmap <leader>ps <Action>(FileStructurePopup)
+nmap <leader>pv <Action>(SelectInProjectView)
+nmap <leader>q <Action>(NERDTreeFind)
+
+" ==============================================================================
+" MISC
+" ==============================================================================
+
+nmap K <Action>(QuickJavaDoc)
+nmap gI <Action>(QuickImplementations)
+
+nmap <leader>9 <Action>(com.testoutputselector.FocusTestRunnerAction)
+
+" Append semicolon and stay in Normal mode
 nnoremap <leader>; A;<Esc>
 
-" EasyMotion
+" ==============================================================================
+" EASYMOTION
+" ==============================================================================
+
 nmap <leader>j <Plug>(easymotion-j)
 nmap <leader>k <Plug>(easymotion-k)
 nmap <leader>F <Plug>(easymotion-bd-f)
 
-" Удобно добавить пустую строку ниже/выше, оставаясь в Normal mode
+" ==============================================================================
+" EDITING HELPERS
+" ==============================================================================
+
+" Insert empty line below/above while staying in Normal mode
 nnoremap zj o<Esc>k
 nnoremap zk O<Esc>j
-
-
-
-
-
-
-
-
-
-
-
-" " ==============================================================================
-" " INITIALIZATION & BASIC SETTINGS
-" " ==============================================================================
-" let mapleader = ' '
-"
-" " Basic Vim settings
-" set ignorecase
-" set smartcase
-" set incsearch
-" set scrolloff=5
-" set showmode
-" set number
-" set relativenumber      " Relative line numbers (Mainstream usage)
-"
-" " Shared clipboard with OS (clean approach, avoiding legacy hacks)
-" set clipboard+=unnamedplus
-"
-" " IdeaVim plugin features
-" set ideastatusicon=gray
-" set multiple-cursors
-" set commentary
-" set ideajoin
-" set vim-paragraph-motion
-" set textobj-indent
-" set highlightedyank
-" set NERDTree
-" set easymotion
-" set which-key
-" set surround            " Must-have (tpope/vim-surround)
-"
-" " Plugin properties
-" let g:highlightedyank_highlight_duration = "200"
-" let g:highlightedyank_highlight_color = "rgba(160,160,160,155)"
-" let g:argtextobj_pairs = "[:],(:),<:>"
-" let g:WhichKey_ShowVimActions = "true"
-" let g:WhichKey_PrefixStyle    = "bold"
-" let g:EasyMotion_smartcase  = 1
-" let g:WhichKey_Timeout = 0    " notimeout equivalent for which-key
-"
-" " ==============================================================================
-" " CORE MAPPINGS (VIM)
-" " ==============================================================================
-" " Fast navigation between editor splits (windows)
-" nnoremap <C-h> <Action>(PrevSplitter)
-" nnoremap <C-l> <Action>(NextSplitter)
-" nnoremap <C-j> <Action>(SplitterDown)
-" nnoremap <C-k> <Action>(SplitterUp)
-"
-" " Override 'gC' for IntelliJ block comment
-" nnoremap gC <Action>(CommentByBlockComment)
-" vnoremap gC <Action>(CommentByBlockComment)
-"
-" " Custom copy behavior for line deletion
-" nnoremap dd "0dd
-"
-" " ==============================================================================
-" " IDEA SHORTCUTS (via Leader)
-" " ==============================================================================
-"
-" " --- NAVIGATION / SEARCH ---
-" nnoremap <leader>ff <Action>(GotoFile)
-" nnoremap <leader>fc <Action>(GotoClass)
-" nnoremap <leader>fs <Action>(GotoSymbol)
-" nnoremap <leader>fr <Action>(RecentFiles)
-" nnoremap <leader>fl <Action>(RecentLocations)
-" nnoremap <leader>ga <Action>(GotoAction)
-" nnoremap <leader>ag <Action>(FindInPath)
-"
-" " --- CODE JUMPS ---
-" nnoremap <leader>gd <Action>(GotoDeclaration)
-" nnoremap <leader>gy <Action>(GotoTypeDeclaration)
-" nnoremap <leader>gi <Action>(GotoImplementation)
-" nnoremap <leader>gu <Action>(ShowUsages)
-" nnoremap <leader>gt <Action>(GotoTest)
-" nnoremap ]e <Action>(GotoNextError)
-" nnoremap [e <Action>(GotoPreviousError)
-" nnoremap ]] <Action>(MethodDown)
-" nnoremap [[ <Action>(MethodUp)
-"
-" " --- REFACTORING ---
-" nnoremap <leader>rn <Action>(RenameElement)
-" nnoremap <leader>rm <Action>(ExtractMethod)
-" nnoremap <leader>rv <Action>(IntroduceVariable)
-" nnoremap <leader>rf <Action>(IntroduceField)
-" nnoremap <leader>rs <Action>(ChangeSignature)
-" nnoremap <leader>rr <Action>(Refactorings.QuickListPopupAction)
-"
-" " --- FORMATTING & CODE GENERATION ---
-" nnoremap <leader>f= <Action>(ReformatCode)
-" nnoremap <leader>.  <Action>(ShowIntentionActions)
-" nnoremap <leader>pg <Action>(Generate)
-" vnoremap <leader>l  <Action>(ReformatCode)
-"
-" " --- WINDOWS / UI ---
-" nnoremap <leader>z  <Action>(ToggleDistractionFreeMode)
-" nnoremap <leader>x  <Action>(ToggleZenMode)
-" nnoremap <leader>t  <Action>(ActivateTerminalToolWindow)
-" nnoremap <leader>wu <Action>(Unsplit)
-" nnoremap <leader>ps <Action>(FileStructurePopup)
-" nnoremap <leader>pv <Action>(SelectInProjectView)
-" nnoremap <leader>q  <Action>(NERDTreeFind)
-"
-" " --- MISCELLANEOUS ---
-" nnoremap K  <Action>(QuickJavaDoc)
-" nnoremap gI <Action>(QuickImplementations)
-" nnoremap <leader>9 <Action>(com.testoutputselector.FocusTestRunnerAction)
-" nnoremap <leader>; A;<Esc>
-"
-" " EasyMotion
-" nmap <leader>j <Plug>(easymotion-j)
-" nmap <leader>k <Plug>(easymotion-k)
-" nmap <leader>F <Plug>(easymotion-bd-f)
-"
-" " Insert blank line below/above while remaining in Normal mode
-" nnoremap zj o<Esc>k
-" nnoremap zk O<Esc>j

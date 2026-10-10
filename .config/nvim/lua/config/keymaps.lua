@@ -64,32 +64,39 @@ vim.keymap.set("i", "<CR>", "<CR>")
 
 -- Key mappings
 vim.keymap.set("n", "<leader>ok", function()
-  local filepath = vim.fn.expand("%:p") -- Get full path of current buffer
+  local filepath = vim.fn.expand("%:p")
   local dest_dir = "/Users/marv/Documents/ObsidianVault/zettelkasten"
-  local dest_path = dest_dir .. "/" .. vim.fn.expand("%:t") -- Append filename to destination directory
+  local dest_path = dest_dir .. "/" .. vim.fn.expand("%:t")
 
-  -- Check if file exists
+  local saved, save_error = pcall(vim.cmd, "write")
+  if not saved then
+    vim.notify("Failed to save note: " .. save_error, vim.log.levels.ERROR)
+    return
+  end
+
   if vim.fn.filereadable(filepath) == 0 then
-    print("Error: File does not exist!")
+    vim.notify("Cannot stage note because the current file does not exist", vim.log.levels.ERROR)
     return
   end
 
-  -- Check if destination directory exists
-  if vim.fn.isdirectory(dest_dir) == 0 then
-    print("Error: Destination directory does not exist!")
+  if vim.fn.mkdir(dest_dir, "p") == -1 then
+    vim.notify("Failed to create staging directory: " .. dest_dir, vim.log.levels.ERROR)
     return
   end
 
-  -- Move file and handle errors
-  local result = os.execute("mv " .. vim.fn.shellescape(filepath) .. " " .. vim.fn.shellescape(dest_dir))
-  if result ~= 0 then
-    print("Error: Failed to move file!")
+  if vim.uv.fs_stat(dest_path) then
+    vim.notify("A staged note already exists at " .. dest_path, vim.log.levels.ERROR)
     return
   end
 
-  -- Close buffer after successful move
-  vim.cmd("bd")
-  print("File moved successfully to " .. dest_dir)
-end)
+  local moved, move_error = vim.uv.fs_rename(filepath, dest_path)
+  if not moved then
+    vim.notify("Failed to stage note: " .. (move_error or "unknown error"), vim.log.levels.ERROR)
+    return
+  end
+
+  vim.api.nvim_buf_delete(0, {})
+  vim.notify("Note staged at " .. dest_path, vim.log.levels.INFO)
+end, { desc = "Stage Obsidian note for sorting" })
 
 vim.keymap.set("n", "<leader>odd", ":!rm '%:p'<cr>:bd<cr>")

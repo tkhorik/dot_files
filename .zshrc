@@ -66,7 +66,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
-bindkey -v
+# bindkey -v
 
 export PATH=$PATH:/Users/marv/.spicetify
 
