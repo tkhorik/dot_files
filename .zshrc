@@ -16,7 +16,7 @@ export LANG=en_US.UTF-8
 alias v=nvim
 alias vim=nvim
 export VISUAL=nvim
-# export EDITOR="$VISUAL"
+export EDITOR="$VISUAL"
 
 # Tmux
 alias t=tmux
