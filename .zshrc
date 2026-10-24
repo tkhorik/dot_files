@@ -2,7 +2,10 @@
 # OpenSpec shell completions configuration
 fpath=("/Users/marv/.zsh/completions" $fpath)
 autoload -Uz compinit
-compinit
+# Full compinit check at most once a day; otherwise use cached dump
+_zcd=(~/.zcompdump(N.mh+24))
+if (( $#_zcd )) || [[ ! -f ~/.zcompdump ]]; then compinit; else compinit -C; fi
+unset _zcd
 # OPENSPEC:END
 
 # Shell config
@@ -73,7 +76,6 @@ export PATH="/Users/marv/.antigravity/antigravity/bin:$PATH"
 export PATH="/opt/homebrew/opt/e2fsprogs/sbin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$(npm prefix -g)/bin:$PATH"
 
 
 #if there is a session, connect
