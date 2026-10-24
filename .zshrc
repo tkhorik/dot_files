@@ -1,7 +1,3 @@
-
-# Kiro CLI pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
-
 # OPENSPEC:START
 # OpenSpec shell completions configuration
 fpath=("/Users/marv/.zsh/completions" $fpath)
@@ -21,11 +17,9 @@ export EDITOR="$VISUAL"
 # Tmux
 alias t=tmux
 
-
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Obsidian
 alias oo='cd $HOME/Documents/ObsidianVault/'
@@ -78,9 +72,6 @@ source $HOME/.env
 export PATH="/Users/marv/.antigravity/antigravity/bin:$PATH"
 export PATH="/opt/homebrew/opt/e2fsprogs/sbin:$PATH"
 
-#AdguardHome
-alias adguard='sudo /Applications/AdGuardHome/AdGuardHome'
-
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$(npm prefix -g)/bin:$PATH"
 
@@ -92,11 +83,7 @@ fi
 export DO_NOT_TRACK=1
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
-# alias opencode='OPENCODE_DISABLE_MODELS_FETCH=1 opencode'
-
-
-# Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+alias opencode='OPENCODE_DISABLE_MODELS_FETCH=1 opencode'
 
 # Added by Antigravity IDE
 export PATH="/Users/marv/.antigravity-ide/antigravity-ide/bin:$PATH"

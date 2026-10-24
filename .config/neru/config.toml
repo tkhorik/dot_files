@@ -18,12 +18,12 @@ mode_exit_keys = ["escape", "Ctrl+C"]
 
 "Ctrl+K" = ["action left_click", "idle"]
 "Ctrl+J" = ["recursive_grid --action left_click"]
+"Ctrl+M" = ["action middle_click", "idle"]
 # "Shift+Space" = ["recursive_grid --action left_click --repeat"]
 
 # [action.key_bindings]
 # left_click = "Return"
 # right_click = "Ctrl+R"
-# middle_click = "Ctrl+M"
 
 # These keys dont have to be here, i didn't want to install another program to run these
 "Cmd+Alt+Shift+Ctrl+F" = "exec open -a \"Finder\""
@@ -102,8 +102,8 @@ sub_key_preview_text_color = { light = "#00000000", dark = "#00000000" }
 # "Ctrl+K" = "action scroll_up"
 # "Ctrl+H" = "action scroll_left"
 # "Ctrl+L" = "action scroll_right"
-# "Ctrl+U" = "action page_up"
-# "Ctrl+D" = "action page_down"
+"Ctrl+U" = "action page_up"
+"Ctrl+D" = "action page_down"
 # "Ctrl+T" = "action go_top"
 # "Ctrl+B" = "action go_bottom"
 # "Ctrl+M" = "action move_mouse"

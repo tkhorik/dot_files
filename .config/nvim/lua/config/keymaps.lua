@@ -13,54 +13,19 @@ vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<cr>")
 -- vim.keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<cr>")
 -- vim.keymap.set("n", "<leader>t", vim.cmd.NERDTreeToggle)
 
--- icon picker
-vim.keymap.set("n", "<leader>ic", ":IconPickerNormal<cr>", { noremap = true, silent = true })
-
--- twilight
-vim.keymap.set("n", "<leader>il", ":Twilight<cr>")
-
--- zen mode
-vim.keymap.set("n", "<leader>zm", ":ZenMode<cr>")
-
 -- format code using LSP
 -- vim.keymap.set("n", "<leader>pp", vim.lsp.buf.format)
 
 -- markdown preview
-vim.keymap.set("n", "<leader>mp", ":MarkdownPreviewToggle<cr>")
-
--- nvim-comment
-vim.keymap.set({ "n", "v" }, "<leader>/", ":CommentToggle<cr>")
-
-------------------
--- goto-preview --
-------------------
---
--- note: lsp config (from lsp.lua)
--- nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
--- nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
--- nmap('gt', vim.lsp.buf.type_definition, 'Type [D]efinition')
--- nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
---
-vim.keymap.set("n", "<leader>gd", ":lua require('goto-preview').goto_preview_definition()<CR>")
-vim.keymap.set("n", "<leader>gt", ":lua require('goto-preview').goto_preview_type_definition()<CR>")
-vim.keymap.set("n", "<leader>gi", ":lua require('goto-preview').goto_preview_implementation()<CR>")
-vim.keymap.set("n", "<leader>gp", ":lua require('goto-preview').close_all_win()<CR>")
+vim.keymap.set("n", "<leader>mp", ":MarkdownPreviewToggle<cr>", { desc = "Markdown Preview Toggle" })
 
 -- Obsidian.nvim keymaps
-vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianToday<CR>", { desc = "Open Today’s Note" })
-vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<CR>", { desc = "New Obsidian Note" })
-vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianOpen<CR>", { desc = "Open Obsidian App" })
+vim.keymap.set("n", "<leader>ot", "<cmd>Obsidian today<CR>", { desc = "Open Today’s Note" })
+vim.keymap.set("n", "<leader>on", "<cmd>Obsidian new<CR>", { desc = "New Obsidian Note" })
+vim.keymap.set("n", "<leader>oo", "<cmd>Obsidian open<CR>", { desc = "Open Obsidian App" })
 
--- Template picker (custom)
-vim.keymap.set("n", "<leader>otm", function()
-  local templates = { "daily.md", "meeting.md", "journal.md" }
-  vim.ui.select(templates, { prompt = "Select a template:" }, function(choice)
-    if choice then
-      vim.cmd("ObsidianTemplate " .. choice)
-    end
-  end)
-end, { desc = "Insert Template into Obsidian Note" })
-vim.keymap.set("i", "<CR>", "<CR>")
+-- Template picker: без аргумента :Obsidian template показывает все шаблоны из vault/templates
+vim.keymap.set("n", "<leader>oT", "<cmd>Obsidian template<CR>", { desc = "Insert Template into Obsidian Note" })
 
 -- Key mappings
 vim.keymap.set("n", "<leader>ok", function()
